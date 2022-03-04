@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const LandingWave = ({ className = 'w-full' }: Props) => {
   return (
@@ -17,7 +17,7 @@ const LandingWave = ({ className = 'w-full' }: Props) => {
         fill="#171414"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default LandingWave
+export default LandingWave;

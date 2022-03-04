@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const Background = ({ className = 'w-full' }: Props) => {
   return (
@@ -82,7 +82,7 @@ const Background = ({ className = 'w-full' }: Props) => {
       <circle cx="781" cy="218" r="33" fill="#2E2D2D" />
       <circle cx="375.5" cy="246.5" r="148.5" fill="#2E2D2D" />
     </svg>
-  )
-}
+  );
+};
 
-export default Background
+export default Background;
