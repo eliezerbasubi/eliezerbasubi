@@ -1,6 +1,6 @@
 ## Hi there 👋 I'm Eliezer W. Basubi!
-####  /eh·lee·eh·zuh/ 🔈
 
+#### /eh·lee·eh·zuh/ 🔈
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/eliezer_basubi?label=Follow)](https://twitter.com/eliezer_basubi)
 [![Linkedin: eliezerbasubi](https://img.shields.io/badge/-Eliezer%20W.%20Basubi-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eliezerbasubi/)](https://www.linkedin.com/in/eliezerbasubi/)
@@ -24,15 +24,16 @@ I consistently strive for perfection in everything I do, even though perfection 
 - ⚡ Fun fact **I am funny**
 
 ### Blogs posts
-<!-- BLOG-POST-LIST:START -->
-[Infinite scroll using IntersectionObserver and Ant design List component in ReactTs](https://medium.com/@eliezer.basubi/infinite-scroll-using-intersectionobserver-api-and-ant-design-list-component-in-reactts-554c69570865)
-<!-- BLOG-POST-LIST:END -->
 
+<!-- BLOG-POST-LIST:START -->
+
+[Infinite scroll using IntersectionObserver and Ant design List component in ReactTs](https://medium.com/@eliezer.basubi/infinite-scroll-using-intersectionobserver-api-and-ant-design-list-component-in-reactts-554c69570865)
+
+<!-- BLOG-POST-LIST:END -->
 
 ### GitHub Stats
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=eliezerbasubi" alt="eliezerbasubi" /></a> </p>
-
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
