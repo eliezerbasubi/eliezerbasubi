@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Experience from '../components/Experience';
 import HeroSection from '../components/HeroSection';
+import Skills from '../components/Skills';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
       <HeroSection />
 
       <Experience />
+
+      <Skills />
     </div>
   );
 };
