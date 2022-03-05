@@ -21,7 +21,7 @@ const SectionTitle = ({
           {title}
         </h2>
       </div>
-      <h3 className="md:text-md font-normal mt-3 tracking-75 leading-10">
+      <h3 className="md:text-md font-normal mt-3 tracking-75 lg:leading-10 text-center">
         {description}
       </h3>
     </div>

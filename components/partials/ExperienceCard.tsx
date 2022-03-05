@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
 
   return (
     <div className={`${isLeft ? 'flex justify-end' : ''} ${className}`}>
-      <div className="relative flex lg:w-1/2">
+      <div className="relative flex md:w-full lg:w-1/2">
         {arrowPosition === 'left' && (
           <div className="w-full h-[2px] bg-gray-300 lg:mt-24 hidden lg:block" />
         )}

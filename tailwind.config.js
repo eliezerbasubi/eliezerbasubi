@@ -10,7 +10,8 @@ module.exports = {
         mono: ['IBM Plex Mono'],
       },
       screens: {
-        ml: '1440px',
+        sl: '1366px', // Small Large
+        ml: '1440px', // Medium Large
         '3xl': '1600px',
         '4xl': '1920px',
       },
