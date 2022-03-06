@@ -9,11 +9,11 @@ type Props = {
 const SkillsCard = ({ title, description, skills }: Props) => {
   return (
     <div className="w-full text-white">
-      <p className="text-xl md:text-2xl xl:text-3xl ml:text-5xl font-medium tracking-75 leading-10">
+      <p className="text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-medium tracking-75 leading-10">
         {title}
       </p>
       {description && (
-        <p className="text-xs md:text-lg 2xl:text-xl tracking-75 leading-4 my-2">
+        <p className="text-xs md:text-sm 2xl:text-xl tracking-75 leading-4 my-2">
           {description}
         </p>
       )}
