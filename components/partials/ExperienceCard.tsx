@@ -34,7 +34,9 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
             {experience.duties.map((duty, index) => (
               <div className="flex space-x-2 mb-3" key={index.toFixed()}>
                 <div className="w-[9px] h-[9px] bg-gray-300 self-start rounded-full flex-shrink-0 mt-1" />
-                <p className="text-xs tracking-75 font-normal">{duty}</p>
+                <p className="text-xs 2xl:text-sm tracking-75 2xl:tracking-wide font-normal">
+                  {duty}
+                </p>
               </div>
             ))}
           </div>
