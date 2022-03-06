@@ -14,7 +14,7 @@ const Skills = () => {
           className="text-white flex flex-col justify-center items-center lg:mb-6"
           barClassName="border-white"
         />
-        <div className="my-12 lg:my-0 xl:my-6 flex flex-wrap lg:gap-x-36 lg:grid auto-rows-auto grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
+        <div className="my-12 lg:my-0 xl:my-6 lg:gap-x-36 grid auto-rows-auto lg:grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
           <div className="col-start-1 col-end-1">
             <SkillsCard
               title="Engineering"
@@ -22,7 +22,7 @@ const Skills = () => {
               skills={SKILLS_MOCKS.engineering}
             />
           </div>
-          <div className="col-start-2 row-start-2">
+          <div className="md:col-start-2 row-start-2">
             <SkillsCard title="Soft Skills" skills={SKILLS_MOCKS.soft} />
           </div>
         </div>
