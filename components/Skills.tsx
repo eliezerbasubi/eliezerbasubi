@@ -6,7 +6,7 @@ import SkillsBackground from './vectors/SkillsBackground';
 
 const Skills = () => {
   return (
-    <div className="relative min-h-screen">
+    <section className="relative min-h-screen">
       <div className="h-full w-full py-12 xl:py-16 container mx-auto px-8 lg:px-12 ml:px-24 relative z-10">
         <SectionTitle
           title="Skills"
@@ -14,7 +14,7 @@ const Skills = () => {
           className="text-white flex flex-col justify-center items-center"
           barClassName="border-white"
         />
-        <div className="my-12 lg:my-0 flex flex-wrap lg:gap-x-36 lg:grid grid-cols-2 grid-rows-2 space-y-4 md:space-y-8 lg:space-y-0">
+        <div className="my-12 lg:my-0 flex flex-wrap lg:gap-x-36 lg:grid auto-rows-auto grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
           <div className="col-start-1 col-end-1">
             <SkillsCard
               title="Engineering"
@@ -30,7 +30,7 @@ const Skills = () => {
       <div className="absolute inset-0 min-h-screen overflow-y-hidden bg-black">
         <SkillsBackground />
       </div>
-    </div>
+    </section>
   );
 };
 

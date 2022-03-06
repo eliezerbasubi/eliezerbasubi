@@ -13,7 +13,7 @@ const SkillsCard = ({ title, description, skills }: Props) => {
         {title}
       </p>
       {description && (
-        <p className="text-xs md:text-lg tracking-75 leading-4 md:leading-10 my-2">
+        <p className="text-xs md:text-lg tracking-75 leading-4 my-2">
           {description}
         </p>
       )}
