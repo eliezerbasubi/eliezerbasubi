@@ -11,10 +11,10 @@ const Skills = () => {
         <SectionTitle
           title="Skills"
           description="The skills I use to deliver products with a great user experience"
-          className="text-white flex flex-col justify-center items-center"
+          className="text-white flex flex-col justify-center items-center lg:mb-6"
           barClassName="border-white"
         />
-        <div className="my-12 lg:my-6 2xl:my-24 flex flex-wrap lg:gap-x-36 lg:grid auto-rows-auto grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
+        <div className="my-12 lg:my-0 xl:my-6 flex flex-wrap lg:gap-x-36 lg:grid auto-rows-auto grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
           <div className="col-start-1 col-end-1">
             <SkillsCard
               title="Engineering"
