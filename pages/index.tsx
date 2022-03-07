@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Experience from '../components/Experience';
-import HeroSection from '../components/HeroSection';
-import Skills from '../components/Skills';
-import Work from '../components/Work';
+import Experience from '../components/HomeSections/Experience';
+import Hero from '../components/HomeSections/Hero';
+import Skills from '../components/HomeSections/Skills';
+import Work from '../components/HomeSections/Work';
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeroSection />
+      <Hero />
 
       <Experience />
 

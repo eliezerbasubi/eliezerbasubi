@@ -1,8 +1,8 @@
 import React from 'react';
-import { IExperience } from '../typings';
-import ExperienceCard from './partials/ExperienceCard';
-import SectionTitle from './partials/SectionTitle';
-import WorkExperienceBG from './vectors/WorkExperienceBG';
+import { IExperience } from '../../typings';
+import ExperienceCard from '../partials/ExperienceCard';
+import SectionTitle from '../partials/SectionTitle';
+import WorkExperienceBG from '../vectors/WorkExperienceBG';
 
 const experiences: IExperience[] = [
   {

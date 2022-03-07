@@ -1,9 +1,9 @@
 import React from 'react';
-import { FEATURED_WORKS } from '../mocks';
-import ArticleCard from './partials/ArticleCard';
-import ProjectCard from './partials/ProjectCard';
-import SectionTitle from './partials/SectionTitle';
-import WorkCard from './partials/WorkCard';
+import { FEATURED_WORKS } from '../../mocks';
+import ArticleCard from '../partials/ArticleCard';
+import ProjectCard from '../partials/ProjectCard';
+import SectionTitle from '../partials/SectionTitle';
+import WorkCard from '../partials/WorkCard';
 
 const Work = () => {
   return (

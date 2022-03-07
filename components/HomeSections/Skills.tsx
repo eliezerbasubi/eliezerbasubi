@@ -1,8 +1,8 @@
 import React from 'react';
-import { SKILLS_MOCKS } from '../mocks';
-import SectionTitle from './partials/SectionTitle';
-import SkillsCard from './partials/SkillsCard';
-import SkillsBackground from './vectors/SkillsBackground';
+import { SKILLS_MOCKS } from '../../mocks';
+import SectionTitle from '../partials/SectionTitle';
+import SkillsCard from '../partials/SkillsCard';
+import SkillsBackground from '../vectors/SkillsBackground';
 
 const Skills = () => {
   return (

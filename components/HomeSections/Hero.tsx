@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Background from '../components/vectors/Background';
 import {
   FaLinkedinIn,
   FaTwitter,
@@ -8,8 +7,9 @@ import {
   FaTelegramPlane,
 } from 'react-icons/fa';
 import { HiMenuAlt3 } from 'react-icons/hi';
+import Background from '../vectors/Background';
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <div className="relative">
       <div className="md:absolute container mx-auto bg-black md:bg-transparent z-10 pb-16 md:pb-0 min-h-screen">
@@ -74,4 +74,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;
