@@ -22,11 +22,11 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
       </div>
 
       <div className="p-4">
-        <div className="flex items-center space-x-1 truncate">
+        <div className="flex items-center overflow-x-auto space-x-1 truncate">
           {project.tags?.map((tag, index) => (
             <p
               key={index.toFixed()}
-              className="text-blue-500 font-mono text-sm 2xl:text-lg"
+              className="text-blue-500 font-mono text-xs md:text-sm 2xl:text-lg"
             >
               #{tag}
             </p>
@@ -34,14 +34,14 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
         </div>
 
         <p
-          className={`text-[22px] leading-[28.6px] font-semibold my-3 ${
+          className={`text-sm md:text-[22px] leading-[28.6px] font-semibold my-1 md:my-3 ${
             isFeatured ? 'truncate' : 'line-clamp-2'
           }`}
         >
           {project.title}
         </p>
         <p
-          className={`truncate text-[15px] leading-[20px] ${
+          className={`text-xs md:text-[15px] leading-[20px] ${
             isFeatured ? 'truncate' : 'line-clamp-3'
           }`}
         >

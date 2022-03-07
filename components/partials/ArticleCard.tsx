@@ -31,7 +31,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
             {article.tags?.map((tag, index) => (
               <p
                 key={index.toFixed()}
-                className="text-blue-500 font-mono text-sm 2xl:text-lg"
+                className="text-blue-500 font-mono text-xs md:text-sm 2xl:text-lg"
               >
                 #{tag}
               </p>
@@ -39,14 +39,14 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
           </div>
 
           <p
-            className={`text-[22px] leading-[28.6px] my-3 font-semibold ${
+            className={`text-sm md:text-[22px] leading-[28.6px] my-2 md:my-3 font-semibold ${
               isFeatured ? 'truncate' : 'line-clamp-2'
             }`}
           >
             {article.title}
           </p>
           <p
-            className={`text-[15px] leading-[20px] ${
+            className={`text-xs md:text-[15px] leading-[20px] ${
               isFeatured ? 'truncate' : 'line-clamp-3'
             }`}
           >
@@ -55,7 +55,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
 
           <div className="mt-3 flex justify-between">
             <div>
-              <p className="text-sm font-medium">{article.author}</p>
+              <p className="text-xs md:text-sm font-medium">{article.author}</p>
               <p className="text-xs md:text-sm 2xl:text-xl text-gray-400 tracking-75 mt-1">
                 {article.publishedOn}
               </p>
