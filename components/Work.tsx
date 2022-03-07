@@ -13,13 +13,21 @@ const Work = () => {
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">
           <WorkCard title="Design &amp; Build,">
-            <div className="xl:w-80 my-6 xl:my-10">
-              <ProjectCard project={FEATURED_WORKS.projects[0]} />
+            <div className="grid gap-4 overflow-y-auto">
+              {FEATURED_WORKS.projects.map((project) => (
+                <div className="xl:w-80 my-6 xl:my-10" key={project.id}>
+                  <ProjectCard project={FEATURED_WORKS.projects[0]} />
+                </div>
+              ))}
             </div>
           </WorkCard>
           <WorkCard title="Write Articles" btnText="Read my articles">
-            <div className="xl:w-80 my-6 xl:my-10">
-              <ArticleCard isFeatured article={FEATURED_WORKS.articles[0]} />
+            <div className="grid gap-4 overflow-y-auto">
+              {FEATURED_WORKS.articles.map((article) => (
+                <div className="xl:w-80 my-6 xl:my-10" key={article.id}>
+                  <ArticleCard isFeatured article={article} />
+                </div>
+              ))}
             </div>
           </WorkCard>
         </div>
