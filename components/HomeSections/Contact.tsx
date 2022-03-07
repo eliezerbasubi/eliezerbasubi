@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaTelegramPlane,
-  FaTwitter,
-} from 'react-icons/fa';
 import SectionHeader from '../partials/SectionHeader';
+import Socials from '../partials/Socials';
 
 const Contact = () => {
   return (
@@ -82,25 +77,12 @@ const Contact = () => {
           </div>
         </form>
 
-        <div className="mt-4 md:mt-6 lg:mt-8 flex flex-col items-center justify-center text-white">
+        <div className="mt-6 md:mt-8 lg:mt-10 flex flex-col items-center justify-center text-white">
           <p className="text-sm lg:text-lg 2xl:text-xl tracking-75">
             Or, let&apos;s connect on:
           </p>
 
-          <div className="flex justify-center items-center space-x-3 mt-3">
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaLinkedinIn />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaTwitter />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaGithub />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaTelegramPlane />
-            </div>
-          </div>
+          <Socials />
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type TLineDirection = 'left' | 'right';
 
 export interface IExperience {
@@ -21,3 +23,15 @@ export interface IArticle extends IProject {
   publishedOn?: string;
   readCount?: number;
 }
+
+export type TSupportedSocials =
+  | 'email'
+  | 'linkedin'
+  | 'twitter'
+  | 'github'
+  | 'telegram';
+
+export type TSocial = Record<
+  TSupportedSocials,
+  { icon: ReactNode; url?: string }
+>;

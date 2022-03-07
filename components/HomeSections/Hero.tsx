@@ -1,12 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import {
-  FaLinkedinIn,
-  FaTwitter,
-  FaGithub,
-  FaTelegramPlane,
-} from 'react-icons/fa';
 import { HiMenuAlt3 } from 'react-icons/hi';
+import Socials from '../partials/Socials';
 import Background from '../vectors/Background';
 
 const Hero = () => {
@@ -53,20 +48,7 @@ const Hero = () => {
             />
           </div>
 
-          <div className="flex justify-center items-center space-x-3 mt-8">
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaLinkedinIn />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaTwitter />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaGithub />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5">
-              <FaTelegramPlane />
-            </div>
-          </div>
+          <Socials className="mt-8" excludes={['email']} />
         </div>
       </div>
       <Background className="w-full hidden md:block" />
