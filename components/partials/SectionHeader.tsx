@@ -7,7 +7,7 @@ type Props = {
   barClassName?: string;
 };
 
-const SectionTitle = ({
+const SectionHeader = ({
   title,
   description,
   className = 'flex flex-col justify-center items-center',
@@ -30,4 +30,4 @@ const SectionTitle = ({
   );
 };
 
-export default SectionTitle;
+export default SectionHeader;
