@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {
   title: string;
-  description: string;
+  description?: string;
   className?: string;
   barClassName?: string;
 };
@@ -21,9 +21,11 @@ const SectionTitle = ({
           {title}
         </h2>
       </div>
-      <h3 className="md:text-md 2xl:text-xl font-normal mt-3 tracking-75 lg:leading-10 text-center">
-        {description}
-      </h3>
+      {description && (
+        <h3 className="md:text-md 2xl:text-xl font-normal mt-3 tracking-75 lg:leading-10 text-center">
+          {description}
+        </h3>
+      )}
     </div>
   );
 };
