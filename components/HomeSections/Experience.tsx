@@ -50,7 +50,7 @@ const experiences: IExperience[] = [
 
 const Experience = () => {
   return (
-    <section className="min-h-screen relative">
+    <section className="min-h-screen relative flex flex-col items-center justify-center">
       <div className="w-full py-12 container mx-auto px-8 lg:px-12 ml:px-24 relative z-10">
         <SectionHeader
           title="Experience"

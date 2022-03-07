@@ -6,7 +6,7 @@ import SkillsBackground from '../vectors/SkillsBackground';
 
 const Skills = () => {
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-screen flex flex-col items-center justify-center">
       <div className="h-full w-full py-12 xl:py-16 container mx-auto px-8 lg:px-12 ml:px-24 relative z-10">
         <SectionHeader
           title="Skills"

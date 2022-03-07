@@ -9,7 +9,7 @@ import SectionHeader from '../partials/SectionHeader';
 
 const Contact = () => {
   return (
-    <section className="w-full min-h-screen bg-dark flex flex-col items-center justify-center">
+    <section className="w-full min-h-screen bg-dark  flex flex-col items-center justify-center">
       <div className="container mx-auto px-8 lg:px-12 ml:px-24 py-12">
         <SectionHeader
           title="Contact"
