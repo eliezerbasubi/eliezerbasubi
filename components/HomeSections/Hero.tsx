@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import { HiMenuAlt3 } from 'react-icons/hi';
+import DrawerMenu from '../partials/DrawerMenu';
 import Socials from '../partials/Socials';
 import Background from '../vectors/Background';
 
@@ -8,9 +8,7 @@ const Hero = () => {
   return (
     <div className="relative">
       <div className="md:absolute container mx-auto bg-black md:bg-transparent z-10 pb-16 md:pb-0 min-h-screen">
-        <div className="text-white flex md:hidden justify-end p-6 pb-0">
-          <HiMenuAlt3 className="h-6 w-6" />
-        </div>
+        <DrawerMenu />
         <div className="text-white py-6 md:py-12 px-8 pt-3 lg:px-12 ml:px-24">
           <div className="pt-10 md:pt-4 lg:pt-8 xl:pt-16 2xl:pt-32">
             <p className="text-2xl xl:text-3xl 2xl:text-4xl xl:font-semibold">
