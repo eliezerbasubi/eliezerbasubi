@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
+import { MENU_ITEMS } from '../../helpers/constants';
 import AnimatedMenu from '../vectors/AnimatedMenu';
 import SectionHeader from './SectionHeader';
 import Socials from './Socials';
-
-const MENU_ITEMS = [
-  { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Work', href: '#work' },
-  { name: 'Contact', href: '#contact' },
-];
 
 const DrawerMenu = () => {
   const [open, setOpen] = useState(false);

@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 import React from 'react';
+import { MENU_ITEMS } from '../../helpers/constants';
 import DrawerMenu from '../partials/DrawerMenu';
 import Socials from '../partials/Socials';
 import Background from '../vectors/Background';
@@ -31,10 +33,11 @@ const Hero = () => {
 
           {/* SHOULD BE REPLACED BY A HUMBERGUR MENU */}
           <div className="hidden md:flex items-center space-x-10 lg:space-x-20 mt-28 md:mt-0 lg:mt-8 sl:mt-16 ml:mt-28 2xl:mt-36 absolute text-xl 2xl:text-2xl tracking-75 font-medium">
-            <div>Experience</div>
-            <div>Skills</div>
-            <div>Work</div>
-            <div>Contact</div>
+            {MENU_ITEMS.map((item) => (
+              <div key={`dsk_${item.href}`} className="hover:border-b-2">
+                <Link href={item.href}>{item.name}</Link>
+              </div>
+            ))}
           </div>
         </div>
         <div className="flex flex-col justify-center items-center md:block md:absolute md:-right-20 lg:right-auto lg:left-[42rem] ml:left-[940px] xl:left-[54rem] 3xl:left-[66rem] 4xl:left-[79rem] md:top-[12.5rem] lg:top-[14rem] ml:top-[316px] xl:top-[18rem] 3xl:top-[22rem] 4xl:top-[26rem] avatar-wrapper">
