@@ -7,8 +7,11 @@ import WorkCard from '../partials/WorkCard';
 
 const Work = () => {
   return (
-    <section className="min-h-screen bg-gray-200 flex flex-col items-center justify-center">
-      <div className="container mx-auto px-8 lg:px-12 ml:px-24 py-12">
+    <section
+      className="min-h-screen bg-gray-200 flex flex-col items-center justify-center"
+      id="work"
+    >
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 ml:px-24 py-12">
         <SectionHeader title="I can" className="flex justify-center mb-8" />
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">

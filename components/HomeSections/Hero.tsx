@@ -6,7 +6,7 @@ import Background from '../vectors/Background';
 
 const Hero = () => {
   return (
-    <div className="relative">
+    <div className="relative" id="about">
       <div className="md:absolute container mx-auto bg-black md:bg-transparent z-10 pb-16 md:pb-0 min-h-screen">
         <DrawerMenu />
         <div className="text-white py-6 md:py-12 px-8 pt-3 lg:px-12 ml:px-24">

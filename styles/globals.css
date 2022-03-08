@@ -5,7 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+html {
   font-family: 'IBM Plex Sans';
   scroll-behavior: smooth;
 }
