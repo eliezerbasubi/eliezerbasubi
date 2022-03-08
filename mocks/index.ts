@@ -1,4 +1,4 @@
-import { IArticle, IProject } from '../typings';
+import { IArticle, IExperience, IProject } from '../typings';
 
 export const SKILLS_MOCKS = {
   engineering: [
@@ -47,3 +47,47 @@ export const FEATURED_WORKS: Record<
     },
   ] as IArticle[],
 };
+
+export const EXPERIENCES: IExperience[] = [
+  {
+    id: 1,
+    position: 'Senior Software Developer',
+    company: 'Xeco',
+    startDate: 'July 2020',
+    endDate: 'Now',
+    duties: [
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+    ],
+  },
+  {
+    id: 2,
+    position: 'Software Developer',
+    company: 'Justice Chatbot Ltd',
+    startDate: 'February 2020',
+    endDate: 'March 2021',
+    duties: [
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+    ],
+  },
+  {
+    id: 3,
+    position: 'Freelancer',
+    company: 'Justice Chatbot Ltd',
+    startDate: 'November 2018',
+    endDate: 'January 2020',
+    duties: [
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+      'Worked on a justice bot messenger app',
+      'Worked with tailwind to build a customer support application',
+    ],
+  },
+];
