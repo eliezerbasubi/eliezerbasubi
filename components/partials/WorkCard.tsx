@@ -28,7 +28,7 @@ const WorkCard: FC<Props> = ({
       <button
         type="button"
         onClick={onClick}
-        className="w-full lg:w-96 h-12 md:h-14 border-2 border-black rounded-lg text-center uppercase font-medium text-sm md:text-lg"
+        className="w-full lg:w-96 h-12 md:h-14 5xl:h-16 border-2 border-black rounded-lg text-center uppercase font-medium text-sm md:text-lg 5xl:text-2xl"
       >
         {btnText}
       </button>

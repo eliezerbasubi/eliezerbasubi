@@ -21,7 +21,7 @@ const Work = () => {
                 <ProjectCard
                   key={project.id}
                   isFeatured
-                  className="xl:w-80 my-6 xl:my-10"
+                  className="xl:w-80 5xl:w-96 my-6 xl:my-10"
                   project={FEATURED_WORKS.projects[0]}
                 />
               ))}
@@ -31,7 +31,7 @@ const Work = () => {
             <div className="flex w-full gap-4 overflow-x-auto">
               {FEATURED_WORKS.articles.map((article) => (
                 <ArticleCard
-                  className="xl:w-80 my-6 xl:my-10 relative"
+                  className="xl:w-80 5xl:w-96 my-6 xl:my-10 relative"
                   key={article.id}
                   isFeatured
                   article={article}
