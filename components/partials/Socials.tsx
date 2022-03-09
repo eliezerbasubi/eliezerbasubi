@@ -16,19 +16,19 @@ type Props = {
 
 const DEFAULT_SOCIALS: TSocial = {
   email: {
-    icon: <MdAlternateEmail />,
+    icon: <MdAlternateEmail className="5xl:h-10 5xl:w-10" />,
   },
   linkedin: {
-    icon: <FaLinkedinIn />,
+    icon: <FaLinkedinIn className="5xl:h-10 5xl:w-10" />,
   },
   twitter: {
-    icon: <FaTwitter />,
+    icon: <FaTwitter className="5xl:h-10 5xl:w-10" />,
   },
   github: {
-    icon: <FaGithub />,
+    icon: <FaGithub className="5xl:h-10 5xl:w-10" />,
   },
   telegram: {
-    icon: <FaTelegramPlane />,
+    icon: <FaTelegramPlane className="5xl:h-10 5xl:w-10" />,
   },
 };
 
@@ -44,7 +44,7 @@ const Socials = ({
         .map(([key, { icon }]) => (
           <div
             key={key}
-            className="w-10 h-10 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5"
+            className="w-10 h-10 5xl:w-20 5xl:h-20 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5"
           >
             {icon}
           </div>

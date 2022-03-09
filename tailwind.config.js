@@ -17,6 +17,7 @@ module.exports = {
         ml: '1440px', // Medium Large
         '3xl': '1600px',
         '4xl': '1920px',
+        '5xl': '2560px',
       },
       letterSpacing: {
         75: '0.0075em',

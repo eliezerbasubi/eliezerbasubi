@@ -16,7 +16,7 @@ const Experience = () => {
           description="My track record of creating seamless and scalable user interfaces for successful companies, so far!"
         />
 
-        <div className="container mx-auto my-12 relative">
+        <div className="container mx-auto my-12 relative 5xl:px-56">
           <div className="h-full w-[1px] border border-gray-300 absolute left-2/4 bottom-0 top-0" />
           {EXPERIENCES.map((experience, index) => (
             <ExperienceCard
