@@ -40,8 +40,6 @@ export const FEATURED_WORKS: Record<
       author: 'Eliezer W. Basubi',
       publishedOn: '30 Mar 2021',
       readCount: 4,
-      // thumbnail:
-      //   'https://images.unsplash.com/photo-1643101447864-1761ac8414cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NjYzODAxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
       thumbnail:
         'https://images.unsplash.com/photo-1643101809754-43a91784ebec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0NjU3NDEyOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
     },
