@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500,600');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,
+html {
+  font-family: 'IBM Plex Sans';
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .drawer-open {
+    @apply h-screen overflow-y-hidden;
+  }
+}
