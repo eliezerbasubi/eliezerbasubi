@@ -35,3 +35,15 @@ export type TSocial = Record<
   TSupportedSocials,
   { icon: ReactNode; url?: string }
 >;
+
+export interface IAbout {
+  fullName: string;
+  jobTitle: string;
+  greeting?: string;
+  personalDescription: string;
+  avatarUrl?: unknown;
+  socials?: Record<TSupportedSocials, string>;
+}
+export interface IUserInfoState extends IAbout {
+  experience?: string;
+}
