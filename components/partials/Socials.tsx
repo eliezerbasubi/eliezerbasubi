@@ -36,17 +36,17 @@ const SOCIAL_ICONS: TSocial = {
 };
 
 const Socials = ({ className = 'mt-3', socials, excludes = [] }: Props) => {
-  const userInfo = useRecoilValue(userInfoState);
+  const { about } = useRecoilValue(userInfoState);
 
   const socialUrls = Object.keys({
-    ...(socials || userInfo.socials || {}),
+    ...(socials || about.socials || {}),
   }).reduce(
     (social: Record<string, { url: string; icon: React.ReactNode }>, key) => {
       if (key === '_type') {
         return {};
       }
       social[key] = {
-        url: userInfo?.socials?.[key as TSupportedSocials] || '/',
+        url: about?.socials?.[key as TSupportedSocials] || '/',
         icon: SOCIAL_ICONS[key as TSupportedSocials]?.icon || (
           <BsGlobe2 className="5xl:h-10 5xl:w-10" />
         ),
