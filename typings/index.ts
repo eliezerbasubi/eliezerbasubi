@@ -8,7 +8,7 @@ export interface IExperience {
   company: string;
   startDate: string;
   endDate: string;
-  active: boolean;
+  active?: boolean;
   duties: string[];
 }
 
