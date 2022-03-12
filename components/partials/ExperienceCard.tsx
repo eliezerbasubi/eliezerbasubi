@@ -27,7 +27,15 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
               </p>
             </div>
             <p className="text-xs md:text-sm 5xl:text-2xl text-gray-500 md:leading-10 tracking-75 self-start">
-              {experience.startDate} - {experience.endDate}
+              {experience.active
+                ? 'Now'
+                : `${new Date(experience.startDate).toLocaleDateString(
+                    'en-us',
+                    { year: 'numeric', month: 'long' }
+                  )} - ${new Date(experience.endDate).toLocaleDateString(
+                    'en-us',
+                    { year: 'numeric', month: 'long' }
+                  )}`}
             </p>
           </div>
           <div className="py-4">

@@ -10,13 +10,7 @@ import Socials from '../partials/Socials';
 import Background from '../vectors/Background';
 
 const Hero = () => {
-  const userInfo = useRecoilValue(userInfoState);
-
-  // const [socialUrls, setSocialUrls] = useState({});
-
-  // useEffect(() => {
-
-  // }, [userInfo]);
+  const { about } = useRecoilValue(userInfoState);
 
   return (
     <div className="relative" id="about">
@@ -25,19 +19,19 @@ const Hero = () => {
         <div className="text-white py-6 md:py-12 px-8 pt-3 lg:px-12 ml:px-24 5xl:px-52">
           <div className="pt-10 md:pt-4 lg:pt-8 xl:pt-16 2xl:pt-32 5xl:pt-72">
             <p className="text-2xl xl:text-3xl 2xl:text-4xl xl:font-semibold">
-              {userInfo.greeting}
+              {about?.greeting}
             </p>
             <h1 className="text-3xl lg:text-4xl xl:text-7xl 2xl:text-8xl leading-[60px] xl:leading-[100px] font-semibold lg:my-3 5xl:my-5">
-              {userInfo.fullName}
+              {about?.fullName}
             </h1>
             <p className="text-2xl xl:text-3xl 2xl:text-4xl xl:font-semibold">
-              {userInfo.jobTitle}
+              {about?.jobTitle}
             </p>
           </div>
 
           <div className="my-8 md:m-24 5xl:m-56 xl:mt-36 2xl:mt-40 md:w-[27rem] lg:w-[30rem] 5xl:w-[40rem]">
             <p className="text-md lg:text-xl 2xl:text-2xl 5xl:text-4xl tracking-75">
-              {userInfo.personalDescription}
+              {about?.personalDescription}
             </p>
           </div>
 
@@ -53,8 +47,8 @@ const Hero = () => {
           <div className="w-36 md:w-[250px] lg:w-[250px] xl:w-[339px] 3xl:w-[375px] 4xl:w-[450px] 5xl:w-[580px] h-36 md:h-[250px] lg:h-[250px] xl:h-[334px] 3xl:h-[375px] 4xl:h-[450px] 5xl:h-[580px] rounded-full border-[10px] border-black overflow-hidden bg-white">
             <img
               src={
-                userInfo.avatarUrl
-                  ? (urlFor(userInfo.avatarUrl) as unknown as string)
+                about?.avatarUrl
+                  ? (urlFor(about?.avatarUrl) as unknown as string)
                   : DEFAULT_AVATAR
               }
               alt="profile"

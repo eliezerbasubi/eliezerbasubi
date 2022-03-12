@@ -3,11 +3,12 @@ import { ReactNode } from 'react';
 export type TLineDirection = 'left' | 'right';
 
 export interface IExperience {
-  id?: number;
+  _id?: number;
   position: string;
   company: string;
   startDate: string;
   endDate: string;
+  active: boolean;
   duties: string[];
 }
 
@@ -44,6 +45,8 @@ export interface IAbout {
   avatarUrl?: unknown;
   socials?: Record<TSupportedSocials, string>;
 }
-export interface IUserInfoState extends IAbout {
-  experience?: string;
+
+export interface IUserInfoState {
+  about: IAbout;
+  experience: IExperience[];
 }

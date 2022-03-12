@@ -10,30 +10,23 @@ import Work from '../components/HomeSections/Work';
 import { useEffect } from 'react';
 import { userInfoState } from '../atoms/atom';
 import { IUserInfoState } from '../typings';
+import { ABOUT_QUERY, EXPERIENCE_QUERY } from '../helpers/queries';
 
 interface IProps {
   userData: IUserInfoState[];
 }
 
 const Home = ({ userData }: IProps) => {
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+  const [{ about }, setUserInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const userDetails = userData.reduce((lookup: Record<string, any>, user) => {
-      lookup.data = user;
-      return lookup.data;
-    }, {}) as IUserInfoState;
-
-    console.log(userDetails);
-
-    setUserInfo(userDetails);
+    setUserInfo((currVal) => ({ ...currVal, ...userData }));
   }, [setUserInfo, userData]);
 
   return (
     <div className="w-full">
       <Head>
-        <title>{userInfo.fullName}</title>
+        <title>{about?.fullName}</title>
         <meta
           name="description"
           content="Fullstack Software Developer, frontend-heavy"
@@ -50,12 +43,25 @@ const Home = ({ userData }: IProps) => {
 };
 
 export const getServerSideProps = async () => {
-  const query = `*[_type in ["about"]]`;
-  const result = await sanityClient.fetch(query);
+  const [about, experience] = await Promise.all([
+    sanityClient.fetch(ABOUT_QUERY),
+    sanityClient.fetch(EXPERIENCE_QUERY),
+  ]);
+
+  const aboutDetails = about?.reduce(
+    (
+      lookup: Record<'about', Record<string, string>>,
+      user: Record<string, string>
+    ) => {
+      lookup.about = user;
+      return lookup.about;
+    },
+    {}
+  );
 
   return {
     props: {
-      userData: result,
+      userData: { about: aboutDetails, experience },
     },
   };
 };
