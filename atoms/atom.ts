@@ -18,5 +18,6 @@ export const userInfoState = atom<IUserInfoState>({
       },
     },
     experience: [],
+    skills: [],
   },
 });

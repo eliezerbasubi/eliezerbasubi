@@ -46,7 +46,18 @@ export interface IAbout {
   socials?: Record<TSupportedSocials, string>;
 }
 
+export type TSkill = { _id: string; title: string; _type?: string };
+
+export interface ISkills {
+  _id: string;
+  key: string;
+  title: string;
+  description: string;
+  skills: TSkill[];
+}
+
 export interface IUserInfoState {
   about: IAbout;
   experience: IExperience[];
+  skills: ISkills[];
 }

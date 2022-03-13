@@ -1,4 +1,4 @@
-export const ABOUT_QUERY = `*[_type == "about"] {
+export const ABOUT_QUERY = `*[_type == "about"][0] {
     avatarUrl,
     fullName,
     greeting,
@@ -16,3 +16,14 @@ export const EXPERIENCE_QUERY = `*[_type == "experience"] | order(active desc, s
     startDate,
     position,
 }`;
+
+export const SKILLS_QUERY = `*[_type == "skills"]{
+    _id,
+    title,
+    key,
+    description,
+    "skills": *[_type == "skill" && skill._ref == ^._id] | order(priority asc) {
+        title,
+       _id
+     }
+  }`;

@@ -10,7 +10,7 @@ import Work from '../components/HomeSections/Work';
 import { useEffect } from 'react';
 import { userInfoState } from '../atoms/atom';
 import { IUserInfoState } from '../typings';
-import { ABOUT_QUERY, EXPERIENCE_QUERY } from '../helpers/queries';
+import { ABOUT_QUERY, EXPERIENCE_QUERY, SKILLS_QUERY } from '../queries';
 
 interface IProps {
   userData: IUserInfoState[];
@@ -18,6 +18,7 @@ interface IProps {
 
 const Home = ({ userData }: IProps) => {
   const [{ about }, setUserInfo] = useRecoilState(userInfoState);
+  console.log(userData);
 
   useEffect(() => {
     setUserInfo((currVal) => ({ ...currVal, ...userData }));
@@ -43,25 +44,15 @@ const Home = ({ userData }: IProps) => {
 };
 
 export const getServerSideProps = async () => {
-  const [about, experience] = await Promise.all([
+  const [about, experience, skills] = await Promise.all([
     sanityClient.fetch(ABOUT_QUERY),
     sanityClient.fetch(EXPERIENCE_QUERY),
+    sanityClient.fetch(SKILLS_QUERY),
   ]);
-
-  const aboutDetails = about?.reduce(
-    (
-      lookup: Record<'about', Record<string, string>>,
-      user: Record<string, string>
-    ) => {
-      lookup.about = user;
-      return lookup.about;
-    },
-    {}
-  );
 
   return {
     props: {
-      userData: { about: aboutDetails, experience },
+      userData: { about, experience, skills },
     },
   };
 };

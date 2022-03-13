@@ -48,7 +48,7 @@ const Hero = () => {
             <img
               src={
                 about?.avatarUrl
-                  ? (urlFor(about?.avatarUrl) as unknown as string)
+                  ? urlFor(about?.avatarUrl).url()
                   : DEFAULT_AVATAR
               }
               alt="profile"
