@@ -7,7 +7,7 @@ export const ABOUT_QUERY = `*[_type == "about"] {
     socials,
 }`;
 
-export const EXPERIENCE_QUERY = `*[_type == "experience"] | order(startDate desc) {
+export const EXPERIENCE_QUERY = `*[_type == "experience"] | order(active desc, startDate desc) {
     _id,
     active,
     company,
