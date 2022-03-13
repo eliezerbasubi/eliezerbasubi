@@ -62,7 +62,7 @@ const Socials = ({ className = 'mt-3', socials, excludes = [] }: Props) => {
         .filter(([key]) => !excludes.includes(key as TSupportedSocials))
         .map(([key, { icon, url }]) => (
           <a
-            href={url}
+            href={key === 'email' ? `mailto:${url}` : url}
             target="_blank"
             rel="noopener noreferrer"
             key={key}

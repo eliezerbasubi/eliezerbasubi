@@ -10,7 +10,7 @@ import Work from '../components/HomeSections/Work';
 import { useEffect } from 'react';
 import { userInfoState } from '../atoms/atom';
 import { IUserInfoState } from '../typings';
-import { ABOUT_QUERY, EXPERIENCE_QUERY, SKILLS_QUERY } from '../queries';
+import { GENERIC_QUERY } from '../queries';
 
 interface IProps {
   userData: IUserInfoState[];
@@ -44,15 +44,11 @@ const Home = ({ userData }: IProps) => {
 };
 
 export const getServerSideProps = async () => {
-  const [about, experience, skills] = await Promise.all([
-    sanityClient.fetch(ABOUT_QUERY),
-    sanityClient.fetch(EXPERIENCE_QUERY),
-    sanityClient.fetch(SKILLS_QUERY),
-  ]);
+  const result = await sanityClient.fetch(GENERIC_QUERY);
 
   return {
     props: {
-      userData: { about, experience, skills },
+      userData: result || {},
     },
   };
 };
