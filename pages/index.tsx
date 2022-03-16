@@ -18,7 +18,6 @@ interface IProps {
 
 const Home = ({ userData }: IProps) => {
   const [{ about }, setUserInfo] = useRecoilState(userInfoState);
-  console.log(userData);
 
   useEffect(() => {
     setUserInfo((currVal) => ({ ...currVal, ...userData }));

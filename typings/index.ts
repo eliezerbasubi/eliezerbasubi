@@ -48,16 +48,26 @@ export interface IAbout {
 
 export type TSkill = { _id: string; title: string; _type?: string };
 
-export interface ISkills {
+interface ICommons {
   _id: string;
   key: string;
   title: string;
   description: string;
+}
+
+export interface ISkills extends ICommons {
   skills: TSkill[];
+}
+
+export interface IWork extends ICommons {
+  article: IArticle;
+  project: IProject;
+  key: 'programming' | 'writing';
 }
 
 export interface IUserInfoState {
   about: IAbout;
   experience: IExperience[];
   skills: ISkills[];
+  works: IWork[];
 }

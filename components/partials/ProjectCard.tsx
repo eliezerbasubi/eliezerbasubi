@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import { urlFor } from '../../sanity';
 import { IProject } from '../../typings';
 
 type Props = {
@@ -15,7 +16,7 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
     >
       <div className="w-full h-full relative overflow-hidden pb-[100%]">
         <img
-          src={project.thumbnail}
+          src={urlFor(project.thumbnail).url()}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -1,11 +1,33 @@
-import React from 'react';
-import { FEATURED_WORKS } from '../../mocks';
+import React, { useCallback, useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { userInfoState } from '../../atoms/atom';
+import { GET_FEATURED_WORKS } from '../../queries';
+import { sanityClient } from '../../sanity';
+import { IWork } from '../../typings';
 import ArticleCard from '../partials/ArticleCard';
 import ProjectCard from '../partials/ProjectCard';
 import SectionHeader from '../partials/SectionHeader';
 import WorkCard from '../partials/WorkCard';
 
 const Work = () => {
+  const [{ works }, setUserInfo] = useRecoilState(userInfoState);
+  const fetchFeaturedWorks = useCallback(async () => {
+    const results = (await sanityClient.fetch(GET_FEATURED_WORKS)) as IWork[];
+
+    setUserInfo((currVal) => ({
+      ...currVal,
+      works: results?.sort((a, b) => {
+        if (a.key > b.key) return 1;
+        if (a.key < b.key) return -1;
+        return 0;
+      }),
+    }));
+  }, [setUserInfo]);
+
+  useEffect(() => {
+    fetchFeaturedWorks();
+  }, [fetchFeaturedWorks]);
+
   return (
     <section
       className="min-h-screen bg-gray-200 flex flex-col items-center justify-center"
@@ -15,30 +37,27 @@ const Work = () => {
         <SectionHeader title="I can" className="flex justify-center mb-8" />
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">
-          <WorkCard title="Design &amp; Build,">
-            <div className="flex gap-4 overflow-x-auto">
-              {FEATURED_WORKS.projects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  isFeatured
-                  className="xl:w-80 5xl:w-96 my-6 xl:my-10"
-                  project={FEATURED_WORKS.projects[0]}
-                />
-              ))}
-            </div>
-          </WorkCard>
-          <WorkCard title="Write Articles" btnText="Read my articles">
-            <div className="flex w-full gap-4 overflow-x-auto">
-              {FEATURED_WORKS.articles.map((article) => (
-                <ArticleCard
-                  className="xl:w-80 5xl:w-96 my-6 xl:my-10 relative"
-                  key={article.id}
-                  isFeatured
-                  article={article}
-                />
-              ))}
-            </div>
-          </WorkCard>
+          {works.map((work) => (
+            <WorkCard key={work._id} title={work.title}>
+              <div className="flex gap-4 overflow-x-auto">
+                {work.project && (
+                  <ProjectCard
+                    isFeatured
+                    className="xl:w-80 5xl:w-96 my-6 xl:my-10"
+                    project={work.project}
+                  />
+                )}
+
+                {work.article && (
+                  <ArticleCard
+                    className="xl:w-80 5xl:w-96 my-6 xl:my-10 relative"
+                    isFeatured
+                    article={work.article}
+                  />
+                )}
+              </div>
+            </WorkCard>
+          ))}
         </div>
       </div>
     </section>

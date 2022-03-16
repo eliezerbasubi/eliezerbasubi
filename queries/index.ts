@@ -29,3 +29,33 @@ export const GENERIC_QUERY = `
     }
   }
   `;
+
+export const GET_FEATURED_WORKS = `
+    *[_type == "works"] {
+      _id,
+      title,
+      key,
+      "project": *[_type == "project" && workType._ref == ^._id && featured == true][0] {
+        _id,
+        _ref,
+        title,
+        description,
+        slug,
+        thumbnail,
+        projectUrl,
+        tags,
+        featured
+      },
+    "article": *[_type == "article" && workType._ref == ^._id && featured == true][0] {
+        _id,
+        _ref,
+        title,
+        description,
+        slug,
+        thumbnail,
+        projectUrl,
+        tags,
+        featured
+      }
+    }
+  `;
