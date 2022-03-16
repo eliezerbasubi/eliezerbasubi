@@ -27,9 +27,18 @@ export default {
       },
     },
     {
+      name: 'body',
+      title: 'Body',
+      type: 'array',
+      of: [{ type: 'block' }],
+    },
+    {
       name: 'thumbnail',
       title: 'Article Main Image',
-      type: 'url',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       title: 'Tags',
@@ -67,6 +76,13 @@ export default {
       type: 'reference',
       validation: (Rule) => Rule.required(),
       to: [{ type: 'works' }],
+    },
+    {
+      name: 'featured',
+      description: 'Featured article will be displayed on the landing page',
+      title: 'Should this article be featured?',
+      type: 'boolean',
+      initialValue: false,
     },
   ],
 };

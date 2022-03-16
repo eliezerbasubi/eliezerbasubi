@@ -55,7 +55,10 @@ export const GET_FEATURED_WORKS = `
         thumbnail,
         projectUrl,
         tags,
-        featured
+        featured,
+        readCount,
+        publishedOn,
+        "author": author -> name
       }
     }
   `;
