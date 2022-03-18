@@ -9,6 +9,7 @@ import works from './works';
 import article from './article';
 import project from './project';
 import author from './author';
+import contact from './contact';
 
 export default createSchema({
   name: 'default',
@@ -21,5 +22,6 @@ export default createSchema({
     article,
     project,
     author,
+    contact,
   ]),
 });

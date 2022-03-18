@@ -134,7 +134,7 @@ const Contact = () => {
                 disabled={visibilities.isSubmitting}
                 className="w-full lg:w-96 h-14 border-2 border-gray-200 text-white rounded-lg text-center uppercase font-medium text-lg 5xl:text-xl"
               >
-                Send message
+                {visibilities.isSubmitting ? 'Sending...' : 'Send message'}
               </button>
             </div>
           </form>
