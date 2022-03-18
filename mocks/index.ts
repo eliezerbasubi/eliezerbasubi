@@ -48,7 +48,7 @@ export const FEATURED_WORKS: Record<
 
 export const EXPERIENCES: IExperience[] = [
   {
-    id: 1,
+    _id: 1,
     position: 'Senior Software Developer',
     company: 'Xeco',
     startDate: 'July 2020',
@@ -59,7 +59,7 @@ export const EXPERIENCES: IExperience[] = [
     ],
   },
   {
-    id: 2,
+    _id: 2,
     position: 'Software Developer',
     company: 'Justice Chatbot Ltd',
     startDate: 'February 2020',
@@ -70,7 +70,7 @@ export const EXPERIENCES: IExperience[] = [
     ],
   },
   {
-    id: 3,
+    _id: 3,
     position: 'Freelancer',
     company: 'Justice Chatbot Ltd',
     startDate: 'November 2018',

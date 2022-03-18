@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatDate } from '../../helpers';
 import { IExperience, TLineDirection } from '../../typings';
 
 type Props = {
@@ -16,7 +17,7 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
         {arrowPosition === 'left' && (
           <div className="w-full h-[2px] bg-gray-300 lg:mt-24 hidden lg:block" />
         )}
-        <div className="w-full lg:w-[420px] xl:w-[465px] 5xl:w-[800px] min-h-[237px] bg-white border border-gray-300 rounded-2xl p-4 5xl:p-6 flex-shrink-0">
+        <div className="w-full lg:w-[420px] xl:w-[550px] 5xl:w-[800px] min-h-[237px] bg-white border border-gray-300 rounded-2xl p-4 5xl:p-6 flex-shrink-0">
           <div className="flex justify-between flex-wrap lg:flex-nowrap">
             <div className="flex-initial">
               <p className="text-base md:text-lg 5xl:text-2xl font-medium leading-10 5xl:leading-none tracking-75 5xl:tracking-normal">
@@ -27,7 +28,8 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
               </p>
             </div>
             <p className="text-xs md:text-sm 5xl:text-2xl text-gray-500 md:leading-10 tracking-75 self-start">
-              {experience.startDate} - {experience.endDate}
+              {formatDate(experience.startDate)} -{' '}
+              {experience.active ? 'Now' : formatDate(experience.endDate)}
             </p>
           </div>
           <div className="py-4">

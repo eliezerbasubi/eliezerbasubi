@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import { formatDate } from '../../helpers';
+import { urlFor } from '../../sanity';
 import { IArticle } from '../../typings';
 
 type Props = {
@@ -18,7 +20,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
           }`}
         >
           <img
-            src={article.thumbnail}
+            src={urlFor(article.thumbnail).url()}
             alt={article.title}
             className={`w-full h-full object-cover ${
               !isFeatured ? 'absolute inset-0' : ''
@@ -58,9 +60,15 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
               <p className="text-xs md:text-sm 5xl:text-3xl font-medium">
                 {article.author}
               </p>
-              <p className="text-xs md:text-sm 2xl:text-xl 5xl:text-2xl text-gray-400 tracking-75 mt-1">
-                {article.publishedOn}
-              </p>
+              {article.publishedOn && (
+                <p className="text-xs md:text-sm 2xl:text-xl 5xl:text-2xl text-gray-400 tracking-75 mt-1">
+                  {formatDate(article.publishedOn, {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                  })}
+                </p>
+              )}
             </div>
             <p className="self-end text-xs md:text-sm 2xl:text-xl 5xl:text-2xl text-gray-400 tracking-75">
               {article.readCount} min. read

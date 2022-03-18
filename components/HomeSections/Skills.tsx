@@ -1,10 +1,13 @@
 import React from 'react';
-import { SKILLS_MOCKS } from '../../mocks';
+import { useRecoilValue } from 'recoil';
+import { userInfoState } from '../../atoms/atom';
 import SectionHeader from '../partials/SectionHeader';
 import SkillsCard from '../partials/SkillsCard';
 import SkillsBackground from '../vectors/SkillsBackground';
 
 const Skills = () => {
+  const { skills } = useRecoilValue(userInfoState);
+
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center"
@@ -18,16 +21,22 @@ const Skills = () => {
           barClassName="border-white"
         />
         <div className="my-12 lg:my-0 xl:my-6 lg:gap-x-36 grid auto-rows-auto lg:grid-cols-2 space-y-4 md:space-y-8 lg:space-y-0">
-          <div className="col-start-1 col-end-1">
-            <SkillsCard
-              title="Engineering"
-              description="As far as building scalable and performant apps is concerned, I am proficient"
-              skills={SKILLS_MOCKS.engineering}
-            />
-          </div>
-          <div className="md:col-start-2 row-start-2">
-            <SkillsCard title="Soft Skills" skills={SKILLS_MOCKS.soft} />
-          </div>
+          {skills.map((skill, index) => (
+            <div
+              key={skill._id}
+              className={
+                index % 2 === 0
+                  ? 'col-start-1 col-end-1'
+                  : 'md:col-start-2 row-start-2'
+              }
+            >
+              <SkillsCard
+                title={skill.title}
+                description={skill.description}
+                skills={skill.skills}
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="absolute inset-0 min-h-screen overflow-y-hidden bg-black">
