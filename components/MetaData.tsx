@@ -10,6 +10,14 @@ const MetaData = ({ about }: Props) => {
   return (
     <Head>
       <title>{about?.fullName}</title>
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content={about.keyWords} key="keywords" />
+
+      <meta
+        name="description"
+        content={about.personalDescription}
+        key="description"
+      />
       <meta
         name="description"
         content="Fullstack Software Developer, frontend-heavy"

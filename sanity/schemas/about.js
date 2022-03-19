@@ -24,6 +24,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'keyWords',
+      title: 'SEO Keywords',
+      description: 'Separate each keyword with a comma',
+      type: 'string',
+    },
+    {
       name: 'avatarUrl',
       title: 'Avatar URL',
       type: 'image',
