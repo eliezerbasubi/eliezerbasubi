@@ -15,6 +15,7 @@ export interface IExperience {
 export interface IProject {
   _id?: string | number;
   title: string;
+  slug: { current: string };
   description: string;
   tags?: string[];
   thumbnail?: string;
