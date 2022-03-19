@@ -19,15 +19,15 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
         )}
         <div className="w-full lg:w-[420px] xl:w-[550px] 5xl:w-[800px] min-h-[237px] bg-white border border-gray-300 rounded-2xl p-4 5xl:p-6 flex-shrink-0">
           <div className="flex justify-between flex-wrap lg:flex-nowrap">
-            <div className="flex-initial">
-              <p className="text-base md:text-lg 5xl:text-2xl font-medium leading-10 5xl:leading-none tracking-75 5xl:tracking-normal">
+            <div className="flex-initial w-full md:w-auto">
+              <p className="text-base md:text-lg 5xl:text-2xl font-medium leading-5 md:leading-10 5xl:leading-none tracking-75 5xl:tracking-normal">
                 {experience.position}
               </p>
-              <p className="text-sm md:text-sm 5xl:text-2xl 5xl:leading-none 5xl:mt-2 leading-[17px] tracking-75 text-black/75">
+              <p className="text-sm md:text-sm 5xl:text-2xl 5xl:leading-none my-2 md:mt-0 5xl:mt-2 leading-[17px] tracking-75 text-black/75">
                 {experience.company}
               </p>
             </div>
-            <p className="text-xs md:text-sm 5xl:text-2xl text-gray-500 md:leading-10 tracking-75 self-start">
+            <p className="text-xs md:text-sm 5xl:text-2xl text-gray-500 md:leading-10 tracking-75 self-end md:self-start">
               {formatDate(experience.startDate)} -{' '}
               {experience.active ? 'Now' : formatDate(experience.endDate)}
             </p>
