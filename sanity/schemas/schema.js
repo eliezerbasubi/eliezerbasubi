@@ -10,6 +10,7 @@ import article from './article';
 import project from './project';
 import author from './author';
 import contact from './contact';
+import metatags from './metatags';
 
 export default createSchema({
   name: 'default',
@@ -23,5 +24,6 @@ export default createSchema({
     project,
     author,
     contact,
+    metatags,
   ]),
 });

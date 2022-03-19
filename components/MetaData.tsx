@@ -1,26 +1,23 @@
 import Head from 'next/head';
 import React from 'react';
-import { IAbout } from '../typings';
+import { IMetaTag } from '../typings';
 
 type Props = {
-  about: IAbout;
+  metatag: IMetaTag;
 };
 
-const MetaData = ({ about }: Props) => {
+const MetaData = ({ metatag }: Props) => {
   return (
     <Head>
-      <title>{about?.fullName}</title>
+      <title>{metatag?.title}</title>
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="keywords" content={about.keyWords} key="keywords" />
+      <meta name="keywords" content={metatag?.keyWords} key="keywords" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <meta
         name="description"
-        content={about.personalDescription}
+        content={metatag?.description}
         key="description"
-      />
-      <meta
-        name="description"
-        content="Fullstack Software Developer, frontend-heavy"
       />
       <link
         rel="apple-touch-icon"
@@ -47,6 +44,28 @@ const MetaData = ({ about }: Props) => {
       />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="theme-color" content="#ffffff" />
+
+      {/* <!-- Primary Meta Tags --> */}
+
+      {/* <!-- Open Graph / Facebook --> */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={metatag?.siteURL} />
+      <meta property="og:title" content={metatag?.title} />
+      <meta
+        property="og:description"
+        content="A dynamic Senior Frontend Engineer"
+      />
+      <meta property="og:image" content={metatag?.coverUrl} />
+
+      {/* <!-- Twitter --> */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={metatag?.siteURL} />
+      <meta property="twitter:title" content={metatag?.title} />
+      <meta
+        property="twitter:description"
+        content="A dynamic Senior Frontend Engineer"
+      />
+      <meta property="twitter:image" content={metatag?.coverUrl}></meta>
     </Head>
   );
 };

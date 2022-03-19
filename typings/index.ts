@@ -78,3 +78,12 @@ export interface IContactForm {
   message: string;
   email: string;
 }
+
+export interface IMetaTag {
+  _id?: string;
+  coverUrl: string;
+  description: string;
+  keyWords: string;
+  siteURL: string;
+  title: string;
+}
