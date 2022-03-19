@@ -73,3 +73,20 @@ export const GET_METATAGS = `
     title,
   }
 `;
+
+export const GET_ARTICLES = `
+     *[_type == "article"] {
+        _id,
+        _ref,
+        title,
+        description,
+        slug,
+        thumbnail,
+        projectUrl,
+        tags,
+        featured,
+        readCount,
+        publishedOn,
+        "author": author -> name
+    }
+`;

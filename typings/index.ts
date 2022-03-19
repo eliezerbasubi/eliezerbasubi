@@ -13,7 +13,7 @@ export interface IExperience {
 }
 
 export interface IProject {
-  id?: string | number;
+  _id?: string | number;
   title: string;
   description: string;
   tags?: string[];

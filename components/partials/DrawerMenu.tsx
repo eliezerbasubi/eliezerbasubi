@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MENU_ITEMS } from '../../helpers/constants';
 import AnimatedMenu from '../vectors/AnimatedMenu';
 import SectionHeader from './SectionHeader';
 import Socials from './Socials';
 
-const DrawerMenu = () => {
+interface IProps {
+  className?: string;
+}
+
+const DrawerMenu = ({
+  className = 'text-white flex md:hidden justify-end p-6 pb-0 relative',
+}: IProps) => {
   const [open, setOpen] = useState(false);
 
   const onToggleDrawer = () => {
@@ -12,9 +18,33 @@ const DrawerMenu = () => {
     document.body.classList.toggle('drawer-open');
   };
 
+  const onResizeScreen = (event: MediaQueryListEvent | boolean) => {
+    const matches = typeof event === 'boolean' ? event : event.matches;
+    if (matches) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const watchMedia = window.matchMedia('(min-width: 768px)');
+    try {
+      watchMedia.addEventListener('change', onResizeScreen);
+    } catch (error) {
+      watchMedia.addListener(onResizeScreen);
+    }
+
+    return () => {
+      try {
+        watchMedia.removeEventListener('change', onResizeScreen);
+      } catch (error) {
+        watchMedia.removeListener(onResizeScreen);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <div className="text-white flex md:hidden justify-end p-6 pb-0 relative">
+      <div className={className}>
         <div
           className={open ? 'z-50 text-black' : ''}
           role="button"
