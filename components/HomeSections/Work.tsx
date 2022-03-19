@@ -38,7 +38,16 @@ const Work = () => {
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">
           {works.map((work) => (
-            <WorkCard key={work._id} title={work.title}>
+            <WorkCard
+              key={work._id}
+              title={work.title}
+              btnText={
+                work.key === 'programming'
+                  ? 'Explore my work'
+                  : 'Read my articles'
+              }
+              redirectTo={work.key === 'programming' ? 'projects' : 'articles'}
+            >
               <div className="flex gap-4 overflow-x-auto">
                 {work.project && (
                   <ProjectCard
