@@ -42,7 +42,8 @@ export interface IAbout {
   jobTitle: string;
   greeting?: string;
   personalDescription: string;
-  avatarUrl?: unknown;
+  avatarUrl?: string;
+  keyWords?: string;
   socials?: Record<TSupportedSocials, string>;
 }
 
