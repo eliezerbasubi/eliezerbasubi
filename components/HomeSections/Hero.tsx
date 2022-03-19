@@ -52,7 +52,8 @@ const Hero = () => {
                   : DEFAULT_AVATAR
               }
               alt="profile"
-              className="w-full h-full"
+              width="100%"
+              height="100%"
             />
           </div>
 

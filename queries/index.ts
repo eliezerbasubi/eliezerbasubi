@@ -62,3 +62,14 @@ export const GET_FEATURED_WORKS = `
       }
     }
   `;
+
+export const GET_METATAGS = `
+  *[_type == "metatags"][0] {
+    _id,
+    coverUrl,
+    description,
+    keyWords,
+    siteURL,
+    title,
+  }
+`;

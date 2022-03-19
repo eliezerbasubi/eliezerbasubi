@@ -25,6 +25,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
             className={`w-full h-full object-cover ${
               !isFeatured ? 'absolute inset-0' : ''
             }`}
+            loading="lazy"
           />
         </div>
 

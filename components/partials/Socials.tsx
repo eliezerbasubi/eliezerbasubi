@@ -66,6 +66,7 @@ const Socials = ({ className = 'mt-3', socials, excludes = [] }: Props) => {
             target="_blank"
             rel="noopener noreferrer"
             key={key}
+            title={key}
             className="w-10 h-10 5xl:w-20 5xl:h-20 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5"
           >
             {icon}

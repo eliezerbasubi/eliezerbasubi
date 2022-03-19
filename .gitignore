@@ -38,3 +38,4 @@ yarn-error.log*
 *.tsbuildinfo
 sanity/sanity.json
 node_modules
+sanity/dist

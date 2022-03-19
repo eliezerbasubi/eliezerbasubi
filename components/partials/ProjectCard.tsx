@@ -19,6 +19,7 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
           src={urlFor(project.thumbnail).url()}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 

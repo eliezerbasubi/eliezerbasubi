@@ -1,52 +1,44 @@
 import Head from 'next/head';
 import React from 'react';
-import { IAbout } from '../typings';
+import { IMetaTag } from '../typings';
 
 type Props = {
-  about: IAbout;
+  metatag: IMetaTag;
 };
 
-const MetaData = ({ about }: Props) => {
+const MetaData = ({ metatag }: Props) => {
   return (
     <Head>
-      <title>{about?.fullName}</title>
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="keywords" content={about.keyWords} key="keywords" />
+      <title>{metatag?.title}</title>
+      <meta name="keywords" content={metatag?.keyWords} key="keywords" />
 
       <meta
         name="description"
-        content={about.personalDescription}
+        content={metatag?.description}
         key="description"
       />
+
+      {/* <!-- Primary Meta Tags --> */}
+
+      {/* <!-- Open Graph / Facebook --> */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={metatag?.siteURL} />
+      <meta property="og:title" content={metatag?.title} />
       <meta
-        name="description"
-        content="Fullstack Software Developer, frontend-heavy"
+        property="og:description"
+        content="A dynamic Senior Frontend Engineer"
       />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/icons/apple-touch-icon.png"
+      <meta property="og:image" content={metatag?.coverUrl} />
+
+      {/* <!-- Twitter --> */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={metatag?.siteURL} />
+      <meta property="twitter:title" content={metatag?.title} />
+      <meta
+        property="twitter:description"
+        content="A dynamic Senior Frontend Engineer"
       />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/icons/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/icons/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/icons/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/icons/safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
-      <meta name="msapplication-TileColor" content="#2b5797" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta property="twitter:image" content={metatag?.coverUrl}></meta>
     </Head>
   );
 };
