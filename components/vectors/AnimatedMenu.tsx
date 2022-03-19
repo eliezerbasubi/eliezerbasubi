@@ -13,6 +13,7 @@ const AnimatedMenu = ({ open, onClick }: Props) => {
       onKeyDown={() => null}
       onClick={onClick}
       className="w-5 h-5 flex flex-col justify-end items-end outline-none"
+      aria-labelledby="about"
     >
       <span
         aria-hidden="true"
