@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import { urlFor } from '../sanity';
 import { IMetaTag } from '../typings';
 
 type Props = {
@@ -28,7 +29,7 @@ const MetaData = ({ metatag }: Props) => {
         property="og:description"
         content="A dynamic Senior Frontend Engineer"
       />
-      <meta property="og:image" content={metatag?.coverUrl} />
+      <meta property="og:image" content={urlFor(metatag?.coverUrl).url()} />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -38,7 +39,10 @@ const MetaData = ({ metatag }: Props) => {
         property="twitter:description"
         content="A dynamic Senior Frontend Engineer"
       />
-      <meta property="twitter:image" content={metatag?.coverUrl}></meta>
+      <meta
+        property="twitter:image"
+        content={urlFor(metatag?.coverUrl).url()}
+      ></meta>
     </Head>
   );
 };
