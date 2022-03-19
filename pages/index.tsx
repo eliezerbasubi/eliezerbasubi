@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Head from 'next/head';
 import { useRecoilState } from 'recoil';
 import { sanityClient } from '../sanity';
 import Contact from '../components/HomeSections/Contact';
@@ -11,6 +10,7 @@ import { useEffect } from 'react';
 import { userInfoState } from '../atoms/atom';
 import { IUserInfoState } from '../typings';
 import { GENERIC_QUERY } from '../queries';
+import MetaData from '../components/MetaData';
 
 interface IProps {
   userData: IUserInfoState[];
@@ -25,14 +25,7 @@ const Home = ({ userData }: IProps) => {
 
   return (
     <div className="w-full">
-      <Head>
-        <title>{about?.fullName}</title>
-        <meta
-          name="description"
-          content="Fullstack Software Developer, frontend-heavy"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <MetaData about={about} />
       <Hero />
       <Experience />
       <Skills />
