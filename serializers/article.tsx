@@ -30,6 +30,7 @@ const ImageComponent = ({
         // @ts-ignore
         aspectRatio: width / height,
       }}
+      className="my-4 mb-8"
     />
   );
 };
@@ -54,13 +55,57 @@ const components: PortableTextComponents = {
       );
     },
   },
+  block: {
+    h1: ({ children }) => (
+      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">{children}</h1>
+    ),
+    h5: ({ children }) => (
+      <h5 className="text-lg md:text-xl lg:text-2xl font-semibold my-3">
+        {children}
+      </h5>
+    ),
+    normal: ({ children }) => (
+      <p style={{ marginTop: '2em', lineHeight: '32px' }}>{children}</p>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul style={{ marginLeft: '2rem' }}>{children}</ul>
+    ),
+    number: ({ children }) => <ol className="mt-4">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="my-4" style={{ listStyleType: 'disc' }}>
+        {children}
+      </li>
+    ),
+  },
+  unknownListItem: ({ children }) => (
+    <li className="my-4" style={{ listStyleType: 'disclosure-closed' }}>
+      {children}
+    </li>
+  ),
   marks: {
     h1: ({ children }) => (
       <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">{children}</h1>
     ),
+    h5: ({ children }) => (
+      <h5 className="text-lg md:text-xl lg:text-2xl font-semibold my-3">
+        {children}
+      </h5>
+    ),
 
     em: ({ children }) => (
       <em className="text-gray-600 font-semibold">{children}</em>
+    ),
+    code: ({ children }) => (
+      <span
+        className="font-mono"
+        style={{ backgroundColor: 'rgb(240, 240, 240)', padding: '0 0.5rem' }}
+      >
+        {children}
+      </span>
     ),
 
     link: ({ value, children }) => {

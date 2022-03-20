@@ -16,6 +16,8 @@ type Props = {
 };
 
 const PostArticle = ({ article }: Props) => {
+  console.log(JSON.stringify(article.body, null, 2));
+
   return (
     <div className="w-full">
       <div className="w-full p-4 lg:p-8 xl:py-8 xl:px-24">
@@ -23,7 +25,7 @@ const PostArticle = ({ article }: Props) => {
         <div className="w-full md:max-w-xl lg:max-w-3xl mx-auto">
           <div className="min-h-screen py-12">
             <div className="w-full flex justify-between items-center flex-wrap lg:flex-nowrap">
-              <h1 className="text-gray-500 text-lg font-medium w-full lg:w-auto">
+              <h1 className="text-gray-500 text-sm w-full lg:w-auto">
                 {formatDate(article.publishedOn as string, {
                   day: 'numeric',
                   month: 'long',
@@ -39,7 +41,7 @@ const PostArticle = ({ article }: Props) => {
               {article.title}
             </h2>
 
-            <div className="py-4">
+            <div className="py-4 leading-7">
               <PortableText
                 value={article.body as never}
                 components={components}

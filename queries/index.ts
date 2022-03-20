@@ -51,7 +51,7 @@ export const GET_FEATURED_WORKS = `
         _ref,
         title,
         description,
-        slug,
+        "slug": slug.current,
         thumbnail,
         projectUrl,
         tags,
