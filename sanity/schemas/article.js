@@ -93,6 +93,12 @@ export default {
       type: 'url',
     },
     {
+      name: 'keyWords',
+      title: 'SEO Keywords',
+      description: 'Separate each keyword with a comma',
+      type: 'string',
+    },
+    {
       name: 'workType',
       type: 'reference',
       validation: (Rule) => Rule.required(),
