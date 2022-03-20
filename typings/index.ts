@@ -15,7 +15,7 @@ export interface IExperience {
 export interface IProject {
   _id?: string | number;
   title: string;
-  slug: { current: string };
+  slug: string;
   description: string;
   tags?: string[];
   thumbnail?: string;
@@ -24,6 +24,7 @@ export interface IArticle extends IProject {
   author?: string;
   publishedOn?: string;
   readCount?: number;
+  body?: [];
 }
 
 export type TSupportedSocials =

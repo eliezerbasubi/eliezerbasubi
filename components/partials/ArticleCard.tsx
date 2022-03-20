@@ -13,9 +13,9 @@ type Props = {
 
 const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
   return (
-    <Link href={`/articles/${article.slug.current}`} passHref>
+    <Link href={`/articles/${article.slug}`} passHref>
       <div
-        className={`w-full h-full relative cursor-pointer transform hover:scale-105 ${className}`}
+        className={`w-full h-full relative cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
       >
         <div className="border rounded-lg overflow-hidden relative z-[3]">
           <div

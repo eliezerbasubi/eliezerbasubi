@@ -80,7 +80,7 @@ export const GET_ARTICLES = `
         _ref,
         title,
         description,
-        slug,
+        "slug": slug.current,
         thumbnail,
         projectUrl,
         tags,
