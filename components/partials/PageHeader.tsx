@@ -15,7 +15,7 @@ const PageHeader = ({ title = 'Eliezer Basubi' }: Props) => {
         <Link href="/">{title}</Link>
       </div>
 
-      <DrawerMenu className="flex md:hidden" />
+      <DrawerMenu className="flex md:hidden" items={PAGE_HEADER_MENUS} />
       <div className="hidden md:flex items-center space-x-4 xl:space-x-6">
         {PAGE_HEADER_MENUS.map((item) => (
           <a

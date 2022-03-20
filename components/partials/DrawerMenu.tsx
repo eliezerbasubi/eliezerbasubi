@@ -6,10 +6,12 @@ import Socials from './Socials';
 
 interface IProps {
   className?: string;
+  items?: { name: string; href: string }[];
 }
 
 const DrawerMenu = ({
   className = 'text-white flex md:hidden justify-end p-6 pb-0 relative',
+  items = MENU_ITEMS,
 }: IProps) => {
   const [open, setOpen] = useState(false);
 
@@ -72,7 +74,7 @@ const DrawerMenu = ({
           className="w-4/5 h-full flex flex-col justify-between bg-white text-black py-6 pt-20"
         >
           <div className="flex flex-col text-lg sm:text-xl space-y-4 tracking-75 font-medium px-7">
-            {MENU_ITEMS.map((item) => (
+            {items.map((item) => (
               <a key={item.name} href={item.href} onClick={onToggleDrawer}>
                 <SectionHeader
                   title={item.name}
