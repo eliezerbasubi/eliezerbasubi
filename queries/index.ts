@@ -51,7 +51,7 @@ export const GET_FEATURED_WORKS = `
         _ref,
         title,
         description,
-        slug,
+        "slug": slug.current,
         thumbnail,
         projectUrl,
         tags,
@@ -72,4 +72,21 @@ export const GET_METATAGS = `
     siteURL,
     title,
   }
+`;
+
+export const GET_ARTICLES = `
+     *[_type == "article"] {
+        _id,
+        _ref,
+        title,
+        description,
+        "slug": slug.current,
+        thumbnail,
+        projectUrl,
+        tags,
+        featured,
+        readCount,
+        publishedOn,
+        "author": author -> name
+    }
 `;

@@ -22,7 +22,7 @@ export const FEATURED_WORKS: Record<
 > = {
   projects: [
     {
-      id: 1,
+      _id: 1,
       title: 'Esika',
       description: 'A property landing web application.',
       tags: ['ReactJS', 'Tailwind', 'Algolia'],
@@ -32,7 +32,7 @@ export const FEATURED_WORKS: Record<
   ] as IProject[],
   articles: [
     {
-      id: 1,
+      _id: 1,
       title: 'How to create your first NFT marketplace',
       description:
         'Here’s how you can create your first NFT Marketplace built on Ethereum.',

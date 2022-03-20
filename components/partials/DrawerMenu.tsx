@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MENU_ITEMS } from '../../helpers/constants';
 import AnimatedMenu from '../vectors/AnimatedMenu';
 import SectionHeader from './SectionHeader';
 import Socials from './Socials';
 
-const DrawerMenu = () => {
+interface IProps {
+  className?: string;
+  items?: { name: string; href: string }[];
+}
+
+const DrawerMenu = ({
+  className = 'text-white flex md:hidden justify-end p-6 pb-0 relative',
+  items = MENU_ITEMS,
+}: IProps) => {
   const [open, setOpen] = useState(false);
 
   const onToggleDrawer = () => {
@@ -12,9 +20,33 @@ const DrawerMenu = () => {
     document.body.classList.toggle('drawer-open');
   };
 
+  const onResizeScreen = (event: MediaQueryListEvent | boolean) => {
+    const matches = typeof event === 'boolean' ? event : event.matches;
+    if (matches) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const watchMedia = window.matchMedia('(min-width: 768px)');
+    try {
+      watchMedia.addEventListener('change', onResizeScreen);
+    } catch (error) {
+      watchMedia.addListener(onResizeScreen);
+    }
+
+    return () => {
+      try {
+        watchMedia.removeEventListener('change', onResizeScreen);
+      } catch (error) {
+        watchMedia.removeListener(onResizeScreen);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <div className="text-white flex md:hidden justify-end p-6 pb-0 relative">
+      <div className={className}>
         <div
           className={open ? 'z-50 text-black' : ''}
           role="button"
@@ -42,7 +74,7 @@ const DrawerMenu = () => {
           className="w-4/5 h-full flex flex-col justify-between bg-white text-black py-6 pt-20"
         >
           <div className="flex flex-col text-lg sm:text-xl space-y-4 tracking-75 font-medium px-7">
-            {MENU_ITEMS.map((item) => (
+            {items.map((item) => (
               <a key={item.name} href={item.href} onClick={onToggleDrawer}>
                 <SectionHeader
                   title={item.name}

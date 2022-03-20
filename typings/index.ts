@@ -13,16 +13,19 @@ export interface IExperience {
 }
 
 export interface IProject {
-  id?: string | number;
+  _id?: string | number;
   title: string;
+  slug: string;
   description: string;
   tags?: string[];
   thumbnail?: string;
+  keyWords?: string;
 }
 export interface IArticle extends IProject {
   author?: string;
   publishedOn?: string;
   readCount?: number;
+  body?: [];
 }
 
 export type TSupportedSocials =
@@ -84,6 +87,6 @@ export interface IMetaTag {
   coverUrl: string;
   description: string;
   keyWords: string;
-  siteURL: string;
+  siteURL?: string;
   title: string;
 }
