@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Router from 'next/router';
 import React from 'react';
-import { MENU_ITEMS } from '../../helpers/constants';
+import { PAGE_HEADER_MENUS } from '../../helpers/constants';
 import DrawerMenu from './DrawerMenu';
 
 type Props = {
@@ -16,18 +17,21 @@ const PageHeader = ({ title = 'Eliezer Basubi' }: Props) => {
 
       <DrawerMenu className="flex md:hidden" />
       <div className="hidden md:flex items-center space-x-4 xl:space-x-6">
-        {MENU_ITEMS.map((item) => (
-          <div
+        {PAGE_HEADER_MENUS.map((item) => (
+          <a
             key={`dsk_${item.href}`}
-            className="flex items-center space-x-1 group cursor-pointer"
+            href={item.href}
+            onClick={async (e) => {
+              e.preventDefault();
+
+              await Router.push(item.href);
+            }}
           >
-            <Link href={`/${item.href}`} passHref>
-              <>
-                <div className="w-5 border border-gray-300 group-hover:self-end transition-all duration-300" />
-                <p>{item.name}</p>
-              </>
-            </Link>
-          </div>
+            <div className="flex items-center space-x-1 group cursor-pointer">
+              <div className="w-5 border border-gray-300 group-hover:self-end transition-all duration-300" />
+              <p>{item.name}</p>
+            </div>
+          </a>
         ))}
       </div>
     </div>

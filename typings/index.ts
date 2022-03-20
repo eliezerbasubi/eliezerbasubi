@@ -19,6 +19,7 @@ export interface IProject {
   description: string;
   tags?: string[];
   thumbnail?: string;
+  keyWords?: string;
 }
 export interface IArticle extends IProject {
   author?: string;
@@ -86,6 +87,6 @@ export interface IMetaTag {
   coverUrl: string;
   description: string;
   keyWords: string;
-  siteURL: string;
+  siteURL?: string;
   title: string;
 }
