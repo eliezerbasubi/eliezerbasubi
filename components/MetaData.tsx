@@ -25,24 +25,18 @@ const MetaData = ({ metatag }: Props) => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={metatag?.siteURL} />
       <meta property="og:title" content={metatag?.title} />
-      <meta
-        property="og:description"
-        content="A dynamic Senior Frontend Engineer"
-      />
+      <meta property="og:description" content={metatag?.description} />
       <meta property="og:image" content={urlFor(metatag?.coverUrl).url()} />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={metatag?.siteURL} />
       <meta property="twitter:title" content={metatag?.title} />
-      <meta
-        property="twitter:description"
-        content="A dynamic Senior Frontend Engineer"
-      />
+      <meta property="twitter:description" content={metatag?.description} />
       <meta
         property="twitter:image"
         content={urlFor(metatag?.coverUrl).url()}
-      ></meta>
+      />
     </Head>
   );
 };
