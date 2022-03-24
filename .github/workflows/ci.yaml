@@ -35,5 +35,8 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
+      - name: Audit for vulnerabilities
+        run: npm run audit-ci
+
       - name: Build App
         run: npm run build
