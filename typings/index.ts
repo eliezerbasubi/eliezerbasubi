@@ -17,6 +17,7 @@ export interface IProject {
   title: string;
   slug: string;
   description: string;
+  projectUrl: string;
   tags?: string[];
   thumbnail?: string;
   keyWords?: string;

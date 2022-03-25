@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
 import React from 'react';
+import Router from 'next/router';
 import { formatDate } from '../../helpers';
 import { urlFor } from '../../sanity';
 import { IArticle } from '../../typings';
@@ -12,11 +12,18 @@ type Props = {
 };
 
 const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
+  const onClick = async (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    await Router.push(`/articles/${article.slug}`);
+  };
+
   return (
-    <Link href={`/articles/${article.slug}`} passHref>
-      <div
-        className={`w-full h-full relative cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105 ${className}`}
-      >
+    <div
+      className={`w-full h-full relative transition-transform duration-200 ease-in-out hover:scale-y-105 ${className}`}
+    >
+      <a href={`/articles/${article.slug}`} onClick={onClick}>
         <div className="border rounded-lg overflow-hidden relative z-[3]">
           <div
             className={`w-full h-full ${
@@ -85,8 +92,8 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
         </div>
         <div className="absolute -bottom-1 inset-x-2 z-[2] border-b rounded-lg h-10" />
         <div className="absolute -bottom-2 inset-x-4 z-[1] border-b rounded-lg h-10" />
-      </div>
-    </Link>
+      </a>
+    </div>
   );
 };
 
