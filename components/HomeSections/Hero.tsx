@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <div className="relative" id="about">
-      <div className="md:absolute container mx-auto bg-black md:bg-transparent z-10 pb-16 md:pb-0 min-h-screen">
+      <div className="flex flex-col md:block md:absolute container mx-auto bg-black md:bg-transparent z-10 pb-16 md:pb-0 min-h-screen">
         <DrawerMenu />
         <div className="text-white py-6 md:py-12 px-8 pt-3 lg:px-12 ml:px-24 5xl:px-52">
           <div className="pt-10 md:pt-4 lg:pt-8 xl:pt-16 2xl:pt-32 5xl:pt-72">
@@ -58,6 +58,16 @@ const Hero = () => {
           </div>
 
           <Socials className="mt-8" excludes={['email']} />
+        </div>
+
+        <div className="relative md:hidden flex-1 ml-3">
+          <p
+            className="text-white text-center text-sm font-medium"
+            style={{ writingMode: 'vertical-rl' }}
+          >
+            SCROLL
+          </p>
+          <div className="h-full w-[1px] bg-white absolute left-2" />
         </div>
       </div>
       <Background className="w-full hidden md:block" />
