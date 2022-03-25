@@ -9,13 +9,17 @@ type Props = {
   isFeatured?: boolean;
 };
 
-const ProjectCard = ({ project, isFeatured, className }: Props) => {
+const ProjectCard = ({ project, isFeatured, className = '' }: Props) => {
   return (
     <div
       className={`w-full h-full border rounded-lg overflow-hidden transition-transform duration-200 ease-in-out hover:scale-y-105 ${className}`}
     >
       <a target="_blank" rel="noopener noreferrer" href={project.projectUrl}>
-        <div className="w-full h-full relative overflow-hidden pb-[100%]">
+        <div
+          className={`w-full ${
+            isFeatured ? 'h-full pb-[100%]' : 'h-40'
+          } relative overflow-hidden`}
+        >
           <img
             src={urlFor(project.thumbnail).url()}
             alt={project.title}

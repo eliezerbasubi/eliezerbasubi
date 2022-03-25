@@ -90,3 +90,15 @@ export const GET_ARTICLES = `
         "author": author -> name
     }
 `;
+
+export const GET_PROJECTS = `
+  *[_type == "project"] {
+    _id,
+    _ref,
+    title,
+    description,
+    "slug": slug.current,
+    thumbnail,
+    projectUrl,
+    tags,
+  }`;
