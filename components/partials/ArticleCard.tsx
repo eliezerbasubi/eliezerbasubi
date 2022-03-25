@@ -35,7 +35,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
             <img
               src={urlFor(article.thumbnail).url()}
               alt={article.title}
-              className={`w-full h-full object-cover ${
+              className={`w-full h-full object-contain ${
                 !isFeatured ? 'absolute inset-0' : ''
               }`}
               loading="lazy"
