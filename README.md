@@ -21,8 +21,6 @@ I consistently strive for perfection in everything I do, even though perfection 
 
 - 📫 How to reach me **eliezer.basubi30@gmail.com**
 
-- ⚡ Fun fact **I am funny**
-
 ### Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
