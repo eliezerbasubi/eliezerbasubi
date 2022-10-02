@@ -12,16 +12,20 @@ import WorkCard from '../partials/WorkCard';
 const Work = () => {
   const [{ works }, setUserInfo] = useRecoilState(userInfoState);
   const fetchFeaturedWorks = useCallback(async () => {
-    const results = (await sanityClient.fetch(GET_FEATURED_WORKS)) as IWork[];
+    try {
+      const results = (await sanityClient.fetch(GET_FEATURED_WORKS)) as IWork[];
 
-    setUserInfo((currVal) => ({
-      ...currVal,
-      works: results?.sort((a, b) => {
-        if (a.key > b.key) return 1;
-        if (a.key < b.key) return -1;
-        return 0;
-      }),
-    }));
+      setUserInfo((currVal) => ({
+        ...currVal,
+        works: results?.sort((a, b) => {
+          if (a.key > b.key) return 1;
+          if (a.key < b.key) return -1;
+          return 0;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
   }, [setUserInfo]);
 
   useEffect(() => {
