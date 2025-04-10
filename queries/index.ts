@@ -8,7 +8,7 @@ export const GENERIC_QUERY = `
       personalDescription,
       socials,
   },
-  "experience": *[_type == "experience"] | order(active desc, startDate desc) {
+  "experience": *[_type == "experience"] | order(active desc, endDate desc) {
       _id,
       active,
       company,
