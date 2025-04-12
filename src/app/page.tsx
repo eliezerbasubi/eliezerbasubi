@@ -8,6 +8,7 @@ import Contact from '@/components/HomeSections/Contact';
 import { sanityClient } from '@/lib/helpers/sanity';
 import { GENERIC_QUERY } from '@/lib/queries';
 import { IUser } from '@/lib/types';
+// import Interactions from '@/components/HomeSections/Interactions';
 
 const Home = async () => {
   const data = await sanityClient.fetch<IUser>(GENERIC_QUERY);
@@ -17,6 +18,7 @@ const Home = async () => {
       <Hero about={data.about} />
       <Experience experiences={data.experience} />
       <Skills skills={data.skills} />
+      {/* <Interactions /> */}
       <Work />
       <Contact socials={data.about.socials} />
     </div>

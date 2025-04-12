@@ -53,7 +53,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
               className={cn(
                 'text-sm md:text-[22px] 5xl:text-5xl leading-[28.6px] my-2 md:my-3 font-semibold line-clamp-2',
                 {
-                  truncate: isFeatured,
+                  'line-clamp-1': isFeatured,
                 }
               )}
             >
@@ -63,7 +63,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
               className={cn(
                 'text-xs md:text-[15px] 5xl:text-3xl leading-[20px] line-clamp-2',
                 {
-                  truncate: isFeatured,
+                  'line-clamp-1': isFeatured,
                 }
               )}
             >

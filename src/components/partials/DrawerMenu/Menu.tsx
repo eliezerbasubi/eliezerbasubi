@@ -32,14 +32,14 @@ const Menu = ({ children, className, items = MENU_ITEMS }: IProps) => {
     const watchMedia = window.matchMedia('(min-width: 768px)');
     try {
       watchMedia.addEventListener('change', onResizeScreen);
-    } catch (error) {
+    } catch {
       watchMedia.addListener(onResizeScreen);
     }
 
     return () => {
       try {
         watchMedia.removeEventListener('change', onResizeScreen);
-      } catch (error) {
+      } catch {
         watchMedia.removeListener(onResizeScreen);
       }
     };
