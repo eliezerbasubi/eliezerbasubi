@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     await sanityClient.create(contact);
 
     return Response.json({ data: body, status: 200 });
-  } catch (error) {
+  } catch {
     return Response.json({
       error: "Couldn't submit the contact details",
       status: 500,

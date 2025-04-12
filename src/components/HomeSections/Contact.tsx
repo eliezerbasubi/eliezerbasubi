@@ -63,7 +63,7 @@ const Contact = ({ socials }: Props) => {
         <SectionHeader
           title="Contact"
           className="flex flex-col justify-center items-center mb-8 text-white"
-          barClassName="bg-white"
+          barClassName="border-white"
           description="Want to say hello, ask for my resume, or see if we can build something amazing together? I'd love to hear from you !"
         />
 
