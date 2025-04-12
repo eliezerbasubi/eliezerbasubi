@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .drawer-open {
+    @apply h-screen overflow-y-hidden;
+  }
+}
