@@ -23,7 +23,7 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
       <Link target="_blank" rel="noopener noreferrer" href={project.projectUrl}>
         <div
           className={cn('w-full h-40 relative overflow-hidden', {
-            'h-full pb-[100%]': isFeatured,
+            'h-0 pb-[100%]': isFeatured,
           })}
         >
           <Image
@@ -48,16 +48,22 @@ const ProjectCard = ({ project, isFeatured, className }: Props) => {
           </div>
 
           <p
-            className={`text-sm md:text-[22px] 5xl:text-5xl leading-[28.6px] font-semibold my-1 md:my-3 ${
-              isFeatured ? 'truncate' : 'line-clamp-2'
-            }`}
+            className={cn(
+              'text-sm md:text-[22px] 5xl:text-5xl leading-[28.6px] font-semibold my-1 md:my-3',
+              {
+                'line-clamp-1': isFeatured,
+              }
+            )}
           >
             {project.title}
           </p>
           <p
-            className={`text-xs md:text-[15px] 5xl:text-3xl leading-[20px] ${
-              isFeatured ? 'truncate' : 'line-clamp-3'
-            }`}
+            className={cn(
+              'text-xs md:text-[15px] 5xl:text-3xl leading-[20px]',
+              {
+                'line-clamp-1': isFeatured,
+              }
+            )}
           >
             {project.description}
           </p>

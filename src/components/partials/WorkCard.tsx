@@ -23,9 +23,11 @@ const WorkCard = ({
 
       <Link
         href={redirectTo}
-        className="flex items-center justify-center w-full h-12 md:h-14 5xl:h-16 border-2 border-black rounded-lg uppercase font-medium text-sm md:text-lg 5xl:text-2xl"
+        className="flex items-center justify-center gap-x-px w-full max-w-96 h-12 md:h-14 5xl:h-16 border-2 border-black rounded-lg uppercase font-medium text-sm md:text-lg 5xl:text-2xl group"
       >
         {btnText}
+
+        <div className="w-0 h-0.5 group-hover:w-10 transition-[width] transition-500 bg-black" />
       </Link>
     </div>
   );

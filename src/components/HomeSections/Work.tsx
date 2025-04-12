@@ -3,10 +3,11 @@ import React from 'react';
 import { GET_FEATURED_WORKS } from '@/lib/queries';
 import { IWork } from '@/lib/types';
 import ArticleCard from '@/components/partials/ArticleCard';
-import ProjectCard from '@/components/partials/ProjectCard';
 import SectionHeader from '@/components/partials/SectionHeader';
 import WorkCard from '@/components/partials/WorkCard';
 import { sanityClient } from '@/lib/helpers/sanity';
+import InteractionCard from '@/components/partials/InteractionCard';
+import { INTERACTIONS } from '@/lib/helpers/constants';
 
 const Work = async () => {
   const data = await sanityClient.fetch<IWork[]>(GET_FEATURED_WORKS);
@@ -16,7 +17,7 @@ const Work = async () => {
       className="min-h-screen bg-gray-200 flex flex-col items-center justify-center"
       id="work"
     >
-      <div className="w-full lg:max-w-4xl 2xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 ml:px-24 py-12">
+      <div className="w-full lg:max-w-4xl 2xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 ml:px-24 2xl:px-0 py-12">
         <SectionHeader title="I can" className="flex justify-center mb-8" />
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">
@@ -41,11 +42,16 @@ const Work = async () => {
               >
                 <div className="flex gap-4 overflow-x-auto">
                   {work.project && (
-                    <ProjectCard
-                      isFeatured
+                    <InteractionCard
+                      data={INTERACTIONS[0]}
                       className="xl:w-80 5xl:w-96 my-6 xl:my-10"
-                      project={work.project}
+                      isFeatured
                     />
+                    // <ProjectCard
+                    //   isFeatured
+                    //   className="xl:w-80 5xl:w-96 my-6 xl:my-10"
+                    //   project={work.project}
+                    // />
                   )}
 
                   {work.article && (
