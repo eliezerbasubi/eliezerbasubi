@@ -40,3 +40,4 @@ sanity/sanity.json
 node_modules
 sanity/dist
 yarn.lock
+.env*
