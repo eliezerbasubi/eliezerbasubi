@@ -27,7 +27,7 @@ const Interactions = () => {
       className="relative flex flex-col items-center justify-center"
       id="interactions"
     >
-      <div className="w-full py-12 lg:max-w-4xl 2xl:max-w-7xl mx-auto px-8 lg:px-12 ml:px-24 2xl:px-0 relative z-10">
+      <div className="w-full py-12 px-8 lg:px-12 ml:px-24 relative z-10">
         <SectionHeader
           title="Interactions"
           description="A showcase of smooth and engaging user interface interactions I've crafted to enhance user experience."

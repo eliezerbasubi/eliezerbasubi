@@ -15,7 +15,7 @@ const Experience = ({ experiences }: Props) => {
       className="min-h-screen relative flex flex-col items-center justify-center"
       id="experience"
     >
-      <div className="w-full py-12 lg:max-w-4xl 2xl:max-w-7xl mx-auto px-8 lg:px-12 ml:px-24 2xl:px-0 relative z-10">
+      <div className="w-full 2xl:max-w-7xl mx-auto py-12 px-8 lg:px-12 ml:px-24 2xl:px-0 relative z-10">
         <SectionHeader
           title="Experience"
           description="My track record of creating seamless and scalable user interfaces for successful companies, so far!"

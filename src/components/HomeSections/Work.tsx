@@ -17,7 +17,7 @@ const Work = async () => {
       className="min-h-screen bg-gray-200 flex flex-col items-center justify-center"
       id="work"
     >
-      <div className="w-full lg:max-w-4xl 2xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 ml:px-24 2xl:px-0 py-12">
+      <div className="w-full 2xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 ml:px-24 2xl:px-0 py-12">
         <SectionHeader title="I can" className="flex justify-center mb-8" />
 
         <div className="grid gap-8 md:gap-10 lg:gap-16 grid-cols-1 md:grid-cols-2">

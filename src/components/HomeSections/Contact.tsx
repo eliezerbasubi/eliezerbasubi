@@ -59,7 +59,7 @@ const Contact = ({ socials }: Props) => {
       className="w-full min-h-screen bg-dark  flex flex-col items-center justify-center"
       id="contact"
     >
-      <div className="lg:max-w-4xl 2xl:max-w-7xl mx-auto px-8 lg:px-12 ml:px-24 2xl:px-0 py-12">
+      <div className="w-full 2xl:max-w-7xl mx-auto px-8 lg:px-12 ml:px-24 2xl:px-0 py-12">
         <SectionHeader
           title="Contact"
           className="flex flex-col justify-center items-center mb-8 text-white"

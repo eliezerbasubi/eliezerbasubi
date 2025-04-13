@@ -15,7 +15,7 @@ const Skills = ({ skills }: Props) => {
       className="relative min-h-screen flex flex-col items-center justify-center"
       id="skills"
     >
-      <div className="h-full w-full py-12 xl:py-16 lg:max-w-4xl 2xl:max-w-7xl mx-auto px-8 lg:px-12 ml:px-24 2xl:px-0 relative z-10">
+      <div className="h-full w-full 2xl:max-w-7xl mx-auto py-12 xl:py-16 px-8 lg:px-12 ml:px-24 2xl:px-0 relative z-10">
         <SectionHeader
           title="Skills"
           description="The skills I use to deliver products with a great user experience"
