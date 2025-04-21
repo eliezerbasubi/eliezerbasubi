@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SectionHeader from '@/components/partials/SectionHeader';
-import SkillsCard from '@/components/partials/SkillsCard';
+import SectionHeader from '@/components/common/SectionHeader';
+import SkillsCard from '@/components/common/SkillsCard';
 import SkillsBackground from '@/components/vectors/SkillsBackground';
 import { ISkills } from '@/lib/types';
 

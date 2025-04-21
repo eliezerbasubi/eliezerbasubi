@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Experience from '@/components/HomeSections/Experience';
-import Hero from '@/components/HomeSections/Hero';
-import Skills from '@/components/HomeSections/Skills';
-import Work from '@/components/HomeSections/Work';
-import Contact from '@/components/HomeSections/Contact';
+import Experience from '@/components/Home/Experience';
+import Hero from '@/components/Home/Hero';
+import Skills from '@/components/Home/Skills';
+import Work from '@/components/Home/Work';
+import Contact from '@/components/Home/Contact';
 import { sanityClient } from '@/lib/helpers/sanity';
 import { GENERIC_QUERY } from '@/lib/queries';
 import { IUser } from '@/lib/types';

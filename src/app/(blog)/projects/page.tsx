@@ -1,12 +1,12 @@
 import React from 'react';
 import { Metadata } from 'next';
 
-import ProjectCard from '@/components/partials/ProjectCard';
-import SectionHeader from '@/components/partials/SectionHeader';
+import ProjectCard from '@/components/common/ProjectCard';
+import SectionHeader from '@/components/common/SectionHeader';
 import { GET_PROJECTS } from '@/lib/queries';
 import { sanityClient } from '@/lib/helpers/sanity';
 import { IProject } from '@/lib/types';
-import Interactions from '@/components/partials/Interactions';
+import Interactions from '@/components/common/Interactions';
 
 export const metadata: Metadata = {
   title: 'Projects',

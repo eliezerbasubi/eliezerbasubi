@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SectionHeader from '@/components/partials/SectionHeader';
-import InteractionCard from '@/components/partials/InteractionCard';
+import SectionHeader from '@/components/common/SectionHeader';
+import InteractionCard from '@/components/common/InteractionCard';
 import { INTERACTIONS } from '@/lib/helpers/constants';
 
 const Interactions = () => {

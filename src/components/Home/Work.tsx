@@ -2,11 +2,11 @@ import React from 'react';
 
 import { GET_FEATURED_WORKS } from '@/lib/queries';
 import { IWork } from '@/lib/types';
-import ArticleCard from '@/components/partials/ArticleCard';
-import SectionHeader from '@/components/partials/SectionHeader';
-import WorkCard from '@/components/partials/WorkCard';
+import ArticleCard from '@/components/common/ArticleCard';
+import SectionHeader from '@/components/common/SectionHeader';
+import WorkCard from '@/components/common/WorkCard';
 import { sanityClient } from '@/lib/helpers/sanity';
-import InteractionCard from '@/components/partials/InteractionCard';
+import InteractionCard from '@/components/common/InteractionCard';
 import { INTERACTIONS } from '@/lib/helpers/constants';
 
 const Work = async () => {

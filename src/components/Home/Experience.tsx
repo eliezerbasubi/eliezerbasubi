@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ExperienceCard from '@/components/partials/ExperienceCard';
-import SectionHeader from '@/components/partials/SectionHeader';
+import ExperienceCard from '@/components/common/ExperienceCard';
+import SectionHeader from '@/components/common/SectionHeader';
 import WorkExperienceBG from '@/components/vectors/WorkExperienceBG';
 import { IExperience } from '@/lib/types';
 

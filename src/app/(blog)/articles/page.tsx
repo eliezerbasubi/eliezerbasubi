@@ -1,8 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
 
-import ArticleCard from '@/components/partials/ArticleCard';
-import SectionHeader from '@/components/partials/SectionHeader';
+import ArticleCard from '@/components/common/ArticleCard';
+import SectionHeader from '@/components/common/SectionHeader';
 import { GET_ARTICLES } from '@/lib/queries';
 import { sanityClient } from '@/lib/helpers/sanity';
 import { IArticle } from '@/lib/types';

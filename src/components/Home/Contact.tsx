@@ -3,8 +3,8 @@
 import React, { useRef, useState } from 'react';
 
 import { IAbout, IContactForm } from '@/lib/types';
-import SectionHeader from '@/components/partials/SectionHeader';
-import SocialsList from '../partials/Socials/SocialsList';
+import SectionHeader from '@/components/common/SectionHeader';
+import SocialsList from '../common/Socials/SocialsList';
 
 type Props = {
   socials: IAbout['socials'];
