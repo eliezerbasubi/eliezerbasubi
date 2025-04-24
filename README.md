@@ -5,19 +5,15 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/eliezer_basubi?label=Follow)](https://twitter.com/eliezer_basubi)
 [![Linkedin: eliezerbasubi](https://img.shields.io/badge/-Eliezer%20W.%20Basubi-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/eliezerbasubi/)](https://www.linkedin.com/in/eliezerbasubi/)
 
-I'm a passionate, dynamic and enthusiastic Front-end Software Engineer.
-I ❤️ helping passionate people hone their skills in tech industry and am always available to work on community projects.  
-I consistently strive for perfection in everything I do, even though perfection is something that cannot be achieved 100%.
-
-- 🔭 I’m currently working on **NFT Marketplace**
-
-- 🌱 I’m currently learning **AngularJs, VueJs**
+I'm a passionate, dynamic, and enthusiastic Front-end Software Engineer.
+I ❤️ helping passionate people hone their skills in the tech industry and am always available to work on community projects.  
+I consistently strive for perfection in everything I do, even though perfection cannot be achieved 100% of the time.
 
 - 👨‍💻 All of my projects are available at [https://www.github.com/eliezerbasubi](https://www.github.com/eliezerbasubi)
 
 <!-- - 📝 I regularly write articles on [https://medium.com/@eliezer.basubi](https://medium.com/@eliezer.basubi) -->
 
-- 💬 Ask me about **React, NextJs, Flutter,TailwindCss**
+- 💬 Ask me about **Web3, React, NextJs, Flutter,TailwindCss**
 
 - 📫 How to reach me **eliezer.basubi30@gmail.com**
 
