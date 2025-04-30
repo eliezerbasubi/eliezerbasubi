@@ -2,52 +2,46 @@ import React from 'react';
 
 import { cn } from '@/lib/helpers';
 import VideoPlayer from './VideoPlayer';
+import { Interaction } from '@/lib/types';
 
 type Props = {
-  data: { title: string; url: string; description: string };
+  data: Interaction;
   className?: string;
+  wrapperClassName?: string;
+  detailsClassName?: string;
   isFeatured?: boolean;
   autoPlay?: boolean;
+  videoStyle?: React.CSSProperties;
 };
 
-const InteractionCard = ({ data, isFeatured, className }: Props) => {
+const InteractionCard = ({
+  data,
+  isFeatured,
+  className,
+  detailsClassName,
+  wrapperClassName,
+  videoStyle,
+}: Props) => {
   return (
-    <div
-      className={cn(
-        'w-full h-full border rounded-lg overflow-hidden group',
-        className
-      )}
-    >
+    <div className={cn('w-full h-full', wrapperClassName)}>
       <div
-        className={cn('w-full h-40 relative overflow-hidden', {
-          'h-0 pb-[100%]': isFeatured,
-        })}
+        className={cn(
+          'w-full h-0 pb-[100%] [&>video]:object-cover border rounded-lg relative overflow-hidden',
+          className
+        )}
       >
         <VideoPlayer
-          source={data.url}
+          source={data.thumbnail.url}
+          style={videoStyle}
           {...(isFeatured ? { autoPlay: true, loop: true } : {})}
         />
       </div>
 
-      <div className="p-4">
-        <p
-          className={cn(
-            'text-sm md:text-[22px] 5xl:text-5xl leading-[28.6px] font-semibold my-1 md:my-3 line-clamp-2',
-            {
-              'line-clamp-1': isFeatured,
-            }
-          )}
-        >
+      <div className={detailsClassName}>
+        <p className="text-sm md:text-base text-neutral-700 font-medium 5xl:font-semibold my-1 md:mt-3 line-clamp-1">
           {data.title}
         </p>
-        <p
-          className={cn(
-            'text-xs md:text-[15px] 5xl:text-3xl leading-[20px] line-clamp-3',
-            {
-              'line-clamp-1': isFeatured,
-            }
-          )}
-        >
+        <p className="text-xs md:text-sm line-clamp-2 text-neutral-600">
           {data.description}
         </p>
       </div>

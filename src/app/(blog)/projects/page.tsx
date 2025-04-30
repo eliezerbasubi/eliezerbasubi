@@ -6,7 +6,6 @@ import SectionHeader from '@/components/common/SectionHeader';
 import { GET_PROJECTS } from '@/lib/queries';
 import { sanityClient } from '@/lib/helpers/sanity';
 import { IProject } from '@/lib/types';
-import Interactions from '@/components/common/Interactions';
 
 export const metadata: Metadata = {
   title: 'Projects',
@@ -19,7 +18,6 @@ const Projects = async () => {
 
   return (
     <div className="w-full min-h-screen py-12 md:max-w-lg lg:max-w-4xl 2xl:max-w-7xl mx-auto">
-      <Interactions />
       <SectionHeader
         title="Projects"
         description="Some of the projects I have worked on!"

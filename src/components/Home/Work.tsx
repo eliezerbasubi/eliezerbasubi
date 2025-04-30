@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { GET_FEATURED_WORKS } from '@/lib/queries';
-import { IWork } from '@/lib/types';
+import { Interaction, IWork } from '@/lib/types';
 import ArticleCard from '@/components/common/ArticleCard';
 import SectionHeader from '@/components/common/SectionHeader';
 import WorkCard from '@/components/common/WorkCard';
 import { sanityClient } from '@/lib/helpers/sanity';
 import InteractionCard from '@/components/common/InteractionCard';
-import { INTERACTIONS } from '@/lib/helpers/constants';
 
 const Work = async () => {
   const data = await sanityClient.fetch<IWork[]>(GET_FEATURED_WORKS);
@@ -37,15 +36,20 @@ const Work = async () => {
                     : 'Read my articles'
                 }
                 redirectTo={
-                  work.key === 'programming' ? 'projects' : 'articles'
+                  work.key === 'programming' ? 'interactions' : 'articles'
                 }
               >
                 <div className="flex gap-4 overflow-x-auto">
                   {work.project && (
                     <InteractionCard
-                      data={INTERACTIONS[0]}
-                      className="xl:w-80 5xl:w-96 my-6 xl:my-10"
+                      data={work.project as Interaction}
+                      wrapperClassName="xl:w-80 5xl:w-96 my-6 xl:my-10 border rounded-lg"
+                      className="border-none"
+                      detailsClassName="p-4"
                       isFeatured
+                      videoStyle={{
+                        clipPath: (work.project as Interaction).clipPath,
+                      }}
                     />
                     // <ProjectCard
                     //   isFeatured

@@ -13,7 +13,7 @@ type Props = {
   isFeatured?: boolean;
 };
 
-const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
+const ArticleCard = ({ article, className, isFeatured }: Props) => {
   return (
     <div className={cn('w-full h-full relative group', className)}>
       <Link href={`/articles/${article.slug}`}>
@@ -51,7 +51,7 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
 
             <p
               className={cn(
-                'text-sm md:text-[22px] 5xl:text-5xl leading-[28.6px] my-2 md:my-3 font-semibold line-clamp-2',
+                'text-sm md:text-base my-2 md:my-3 font-semibold line-clamp-2',
                 {
                   'line-clamp-1': isFeatured,
                 }
@@ -60,12 +60,9 @@ const ArticleCard = ({ article, className = '', isFeatured }: Props) => {
               {article.title}
             </p>
             <p
-              className={cn(
-                'text-xs md:text-[15px] 5xl:text-3xl leading-[20px] line-clamp-2',
-                {
-                  'line-clamp-1': isFeatured,
-                }
-              )}
+              className={cn('text-xs md:text-sm line-clamp-2', {
+                'line-clamp-1': isFeatured,
+              })}
             >
               {article.description}
             </p>
