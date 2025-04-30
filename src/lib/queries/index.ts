@@ -42,6 +42,7 @@ export const GET_FEATURED_WORKS = `
         description,
         slug,
         featured,
+        clipPath,
         "thumbnail": thumbnail.asset->{
           url,
           originalFilename,
