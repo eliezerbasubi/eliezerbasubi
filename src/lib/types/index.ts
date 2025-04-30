@@ -22,6 +22,15 @@ export interface IProject {
   thumbnail?: string;
   keyWords?: string;
 }
+
+export interface Interaction {
+  _id?: string | number;
+  title: string;
+  slug: string;
+  description: string;
+  thumbnail: { url: string; originalFilename: string; mimeType: string };
+  clipPath: string;
+}
 export interface IArticle extends IProject {
   author?: string;
   publishedOn?: string;
@@ -66,7 +75,7 @@ export interface ISkills extends ICommons {
 
 export interface IWork extends ICommons {
   article: IArticle;
-  project: IProject;
+  project: IProject | Interaction;
   key: 'programming' | 'writing';
 }
 

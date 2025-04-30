@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PageHeader from '@/components/partials/PageHeader';
-import Socials from '@/components/partials/Socials';
+import PageHeader from '@/components/common/PageHeader';
+import Socials from '@/components/common/Socials';
 import { Metadata } from 'next';
 
 type Props = {

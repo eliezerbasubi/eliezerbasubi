@@ -3,7 +3,6 @@
 import { cn } from '@/lib/helpers';
 import React, { useRef, useState } from 'react';
 import { HiPlay, HiPause } from 'react-icons/hi2';
-import { BiFullscreen } from 'react-icons/bi';
 
 type Props = React.ComponentPropsWithoutRef<'video'> & {
   source: string;
@@ -26,16 +25,6 @@ const VideoPlayer = ({ source, className, ...props }: Props) => {
     }
   };
 
-  const handleFullscreen = () => {
-    if (!ref.current) return;
-
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      ref.current.requestFullscreen();
-    }
-  };
-
   return (
     <>
       <video
@@ -49,22 +38,13 @@ const VideoPlayer = ({ source, className, ...props }: Props) => {
         {...props}
       />
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 group">
         <button
           onClick={handlePlayPause}
-          className="h-full w-full grid place-content-center invisible group-hover:visible"
+          className="h-full w-full grid place-content-center transition-opacity duration-500 opacity-0 group-hover:opacity-100"
         >
-          <div className="size-8 rounded-full bg-black text-white grid place-content-center">
+          <div className="size-12 text-2xl rounded-full bg-black text-white grid place-content-center">
             {playing ? <HiPause /> : <HiPlay />}
-          </div>
-        </button>
-
-        <button
-          onClick={handleFullscreen}
-          className="absolute bottom-4 right-4 grid place-content-center invisible group-hover:visible"
-        >
-          <div className="size-8 rounded-full bg-black text-white grid place-content-center">
-            {<BiFullscreen />}
           </div>
         </button>
       </div>

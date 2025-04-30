@@ -35,16 +35,18 @@ export const GET_FEATURED_WORKS = `
       _id,
       title,
       key,
-      "project": *[_type == "project" && workType._ref == ^._id && featured == true][0] {
+      "project": *[_type == "interaction" && workType._ref == ^._id && featured == true][0] {
         _id,
         _ref,
         title,
         description,
         slug,
-        thumbnail,
-        projectUrl,
-        tags,
-        featured
+        featured,
+        "thumbnail": thumbnail.asset->{
+          url,
+          originalFilename,
+          mimeType
+        }
       },
     "article": *[_type == "article" && workType._ref == ^._id && featured == true][0] {
         _id,
@@ -118,4 +120,20 @@ export const GET_PROJECTS = `
     thumbnail,
     projectUrl,
     tags,
+  }`;
+
+export const GET_INTERACTIONS = `
+  *[_type == "interaction"] {
+    _id,
+    _ref,
+    title,
+    description,
+    "slug": slug.current,
+    clipPath,
+    featured,
+    "thumbnail": thumbnail.asset->{
+      url,
+      originalFilename,
+      mimeType
+    }
   }`;

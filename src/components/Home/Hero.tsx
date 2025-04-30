@@ -3,8 +3,8 @@ import React from 'react';
 import Image from 'next/image';
 
 import { DEFAULT_AVATAR, MENU_ITEMS } from '@/lib/helpers/constants';
-import DrawerMenu from '@/components/partials/DrawerMenu';
-import Socials from '@/components/partials/Socials';
+import DrawerMenu from '@/components/common/DrawerMenu';
+import Socials from '@/components/common/Socials';
 import Background from '@/components/vectors/Background';
 
 import { urlFor } from '@/lib/helpers/sanity';

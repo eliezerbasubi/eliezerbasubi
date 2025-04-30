@@ -11,6 +11,7 @@ import project from './project';
 import author from './author';
 import contact from './contact';
 import metatags from './metatags';
+import interaction from './interaction';
 
 export default createSchema({
   name: 'default',
@@ -25,5 +26,6 @@ export default createSchema({
     author,
     contact,
     metatags,
+    interaction,
   ]),
 });

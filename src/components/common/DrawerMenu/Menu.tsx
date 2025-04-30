@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { MENU_ITEMS } from '@/lib/helpers/constants';
 import AnimatedMenu from '@/components/vectors/AnimatedMenu';
-import SectionHeader from '@/components/partials/SectionHeader';
+import SectionHeader from '@/components/common/SectionHeader';
 import { cn } from '@/lib/helpers';
 
 interface IProps {

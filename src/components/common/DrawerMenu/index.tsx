@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Socials from '@/components/partials/Socials';
+import Socials from '@/components/common/Socials';
 
 import Menu from './Menu';
 
