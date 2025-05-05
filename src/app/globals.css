@@ -7,3 +7,13 @@
     @apply h-screen overflow-y-hidden;
   }
 }
+.code-block,
+.code-block > pre {
+  white-space: break-spaces;
+  background-color: #1e1e1e;
+}
+.code-block .line {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 0;
+}

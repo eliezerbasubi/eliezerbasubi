@@ -3,9 +3,10 @@
 import { PortableTextComponents } from '@portabletext/react';
 import Link from 'next/link';
 import { getImageDimensions } from '@sanity/asset-utils';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import { codeToHtml } from 'shiki';
 
 import { urlFor } from '@/lib/helpers/sanity';
+import CopyButton from '@/components/common/CopyButton';
 
 const ImageComponent = ({
   value,
@@ -37,19 +38,28 @@ const ImageComponent = ({
 const components: PortableTextComponents = {
   types: {
     image: ImageComponent,
-    code: ({ value = {} }) => {
+    code: async ({ value = {} }) => {
       const { language, code } = value;
 
       if (!code) return null;
 
+      const html = await codeToHtml(code, {
+        lang: language,
+        theme: 'dark-plus',
+      });
+
       return (
-        <div
-          className="my-8 p-4"
-          style={{ backgroundColor: 'rgb(240, 240, 240)' }}
-        >
-          <SyntaxHighlighter language={language} wrapLongLines>
-            {code}
-          </SyntaxHighlighter>
+        <div className="my-8 p-4 text-sm code-block rounded-lg relative group">
+          <div
+            className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{ right: 8, top: 8 }}
+          >
+            <CopyButton content={html} />
+          </div>
+          <div
+            className="code-block"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </div>
       );
     },
@@ -63,9 +73,7 @@ const components: PortableTextComponents = {
         {children}
       </h5>
     ),
-    normal: ({ children }) => (
-      <p style={{ marginTop: '2em', lineHeight: '32px' }}>{children}</p>
-    ),
+    normal: ({ children }) => <p className="text-base mt-4">{children}</p>,
   },
   list: {
     bullet: ({ children }) => (
