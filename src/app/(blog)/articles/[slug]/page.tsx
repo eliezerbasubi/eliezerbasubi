@@ -70,7 +70,7 @@ const PostArticle = async ({ params }: Props) => {
           {article.title}
         </h2>
 
-        <div className="py-4 leading-7">
+        <div className="py-4">
           <PortableText value={article.body as never} components={components} />
         </div>
       </div>
