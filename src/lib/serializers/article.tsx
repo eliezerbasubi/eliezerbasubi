@@ -49,7 +49,12 @@ const components: PortableTextComponents = {
       });
 
       return (
-        <div className="my-8 p-4 text-sm code-block rounded-lg relative group">
+        <div
+          className="my-8 p-4 text-sm rounded-lg relative group overflow-auto"
+          style={{
+            backgroundColor: '#1e1e1e',
+          }}
+        >
           <div
             className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{ right: 8, top: 8 }}
@@ -59,6 +64,10 @@ const components: PortableTextComponents = {
           <div
             className="code-block"
             dangerouslySetInnerHTML={{ __html: html }}
+            style={{
+              maxHeight: 520,
+              overflow: 'auto',
+            }}
           />
         </div>
       );
