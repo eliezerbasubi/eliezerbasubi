@@ -4,10 +4,10 @@ import React, { cache } from 'react';
 import { MdTimer } from 'react-icons/md';
 
 import { formatDate } from '@/lib/helpers';
-import { IArticle } from '@/lib/types';
+import { IArticle, IMetaTag } from '@/lib/types';
 import { sanityClient, urlFor } from '@/lib/helpers/sanity';
 import components from '@/lib/serializers/article';
-import { GET_ARTICLE } from '@/lib/queries';
+import { GET_ARTICLE, GET_METATAGS } from '@/lib/queries';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -31,9 +31,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
   const article = await getArticle(slug);
+  const metadata = await sanityClient.fetch<IMetaTag>(GET_METATAGS);
 
   const title = article.title;
   const description = article.description;
+  const baseUrl = metadata.siteURL ?? 'https://eliezerbasubi.com';
+  const articleUrl = new URL(`/${slug}`, baseUrl).toString();
 
   return {
     title,
@@ -44,9 +47,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `/${slug}`,
+      url: articleUrl,
       images: [urlFor(article.thumbnail).url()],
-      type: 'website',
+      type: 'article',
+      publishedTime: article.publishedOn,
+      authors: article.author,
+      tags: article.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [urlFor(article.thumbnail).url()],
+      creator: article.author,
+    },
+    alternates: {
+      canonical: articleUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
