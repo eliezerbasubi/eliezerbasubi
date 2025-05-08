@@ -111,5 +111,12 @@ export default {
       type: 'boolean',
       initialValue: false,
     },
+    {
+      name: 'listed',
+      description: 'Only listed artices will be visible to users',
+      title: 'Should this article be listed?',
+      type: 'boolean',
+      initialValue: true,
+    },
   ],
 };

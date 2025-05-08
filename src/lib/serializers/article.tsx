@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
+
 import { PortableTextComponents } from '@portabletext/react';
 import Link from 'next/link';
 import { getImageDimensions } from '@sanity/asset-utils';
 import { codeToHtml } from 'shiki';
+import Image from 'next/image';
 
 import { urlFor } from '@/lib/helpers/sanity';
 import CopyButton from '@/components/common/CopyButton';
@@ -17,7 +18,7 @@ const ImageComponent = ({
 }) => {
   const { width, height } = getImageDimensions(value);
   return (
-    <img
+    <Image
       src={urlFor()
         .image(value)
         .width(isInline ? 100 : 800)
@@ -25,10 +26,11 @@ const ImageComponent = ({
         .auto('format')
         .url()}
       alt={value.alt || ' '}
+      width={width}
+      height={height}
       loading="lazy"
       style={{
         display: isInline ? 'inline-block' : 'block',
-        aspectRatio: width / height,
       }}
       className="my-4 mb-8"
     />
@@ -82,7 +84,9 @@ const components: PortableTextComponents = {
         {children}
       </h5>
     ),
-    normal: ({ children }) => <p className="text-base mt-4">{children}</p>,
+    normal: ({ children }) => (
+      <p style={{ marginTop: '1.25em', marginBottom: '1.25em' }}>{children}</p>
+    ),
   },
   list: {
     bullet: ({ children }) => (

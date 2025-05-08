@@ -16,7 +16,7 @@ type Props = {
 const ArticleCard = ({ article, className, isFeatured }: Props) => {
   return (
     <div className={cn('w-full h-full relative group', className)}>
-      <Link href={`/articles/${article.slug}`}>
+      <Link href={`/blog/${article.slug}`}>
         <div className="h-full border rounded-lg overflow-hidden relative z-[3]">
           <div
             className={cn('w-full h-52 lg:h-64', {

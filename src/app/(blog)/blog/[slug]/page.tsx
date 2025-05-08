@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import { Metadata } from 'next';
-import React from 'react';
+import React, { cache } from 'react';
 import { MdTimer } from 'react-icons/md';
 
 import { formatDate } from '@/lib/helpers';
@@ -12,6 +12,10 @@ import { GET_ARTICLE } from '@/lib/queries';
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+const getArticle = cache(async (slug: string) => {
+  return await sanityClient.fetch<IArticle>(GET_ARTICLE, { slug });
+});
 
 export async function generateStaticParams() {
   const query = `*[_type == "post"] {
@@ -26,7 +30,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
-  const article = await sanityClient.fetch<IArticle>(GET_ARTICLE, { slug });
+  const article = await getArticle(slug);
 
   const title = article.title;
   const description = article.description;
@@ -35,6 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     keywords: article.keyWords,
+    creator: article.author,
+    authors: { name: article.author },
     openGraph: {
       title,
       description,
@@ -46,9 +52,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const PostArticle = async ({ params }: Props) => {
-  const article = await sanityClient.fetch(GET_ARTICLE, {
-    slug: (await params).slug,
-  });
+  const slug = (await params).slug;
+
+  const article = await getArticle(slug);
 
   return (
     <div className="w-full md:max-w-xl lg:max-w-3xl mx-auto">
@@ -70,7 +76,7 @@ const PostArticle = async ({ params }: Props) => {
           {article.title}
         </h2>
 
-        <div className="py-4">
+        <div className="py-4 leading-7 text-[#171717]">
           <PortableText value={article.body as never} components={components} />
         </div>
       </div>
