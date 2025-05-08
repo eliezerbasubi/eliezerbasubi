@@ -78,7 +78,7 @@ export const GET_METATAGS = `
 `;
 
 export const GET_ARTICLES = `
-     *[_type == "article"] {
+     *[_type == "article" && listed == true] | order(publishedOn desc) {
         _id,
         _ref,
         title,
@@ -90,6 +90,7 @@ export const GET_ARTICLES = `
         featured,
         readCount,
         publishedOn,
+        listed,
         "author": author -> name
     }
 `;

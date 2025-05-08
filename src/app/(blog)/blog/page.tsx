@@ -20,8 +20,8 @@ const Articles = async () => {
     <div className="w-full lg:max-w-4xl 2xl:max-w-7xl mx-auto">
       <div className="min-h-screen py-12">
         <SectionHeader
-          title="Articles"
-          description="Enjoy my collected articles on different topics around blockchain, web performance, UI/UX design and many more."
+          title="Blog"
+          description="Enjoy my collected blog posts on different topics around blockchain, web performance, UI/UX design and many more."
           descriptionClassName="md:text-md 2xl:text-xl 5xl:text-3xl font-normal mt-3 text-center"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">

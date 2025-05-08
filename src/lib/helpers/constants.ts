@@ -7,7 +7,7 @@ export const MENU_ITEMS = [
 
 export const PAGE_HEADER_MENUS = [
   { name: 'Home', href: '/' },
-  { name: 'Articles', href: '/articles' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Interactions', href: '/interactions' },
   { name: 'Projects', href: '/projects' },
   { name: 'Contact', href: '/#contact' },
