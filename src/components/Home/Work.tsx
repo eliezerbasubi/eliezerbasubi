@@ -36,7 +36,7 @@ const Work = async () => {
                     : 'Read my articles'
                 }
                 redirectTo={
-                  work.key === 'programming' ? 'interactions' : 'articles'
+                  work.key === 'programming' ? 'interactions' : 'blog'
                 }
               >
                 <div className="flex gap-4 overflow-x-auto">
