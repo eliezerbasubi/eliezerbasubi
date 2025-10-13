@@ -90,7 +90,7 @@ const Contact = ({ socials }: Props) => {
                     type="text"
                     required
                     autoComplete="off"
-                    className="peer h-8 md:h-10 5xl:h-14 w-full placeholder-transparent focus:outline-none bg-transparent relative top-2 5xl:text-xl"
+                    className="peer h-8 md:h-10 5xl:h-14 w-full placeholder-transparent focus:outline-hidden bg-transparent relative top-2 5xl:text-xl"
                     placeholder="John Doe"
                   />
                   <label
@@ -109,7 +109,7 @@ const Contact = ({ socials }: Props) => {
                     type="text"
                     required
                     autoComplete="off"
-                    className="peer h-8 md:h-10 5xl:h-14 w-full placeholder-transparent focus:outline-none bg-transparent relative top-2 5xl:text-xl"
+                    className="peer h-8 md:h-10 5xl:h-14 w-full placeholder-transparent focus:outline-hidden bg-transparent relative top-2 5xl:text-xl"
                     placeholder="john@doe.com"
                   />
                   <label
@@ -127,7 +127,7 @@ const Contact = ({ socials }: Props) => {
                   id="message"
                   name="message"
                   required
-                  className="peer h-16 md:h-20 w-full placeholder-transparent focus:outline-none bg-transparent relative top-3 resize-none"
+                  className="peer h-16 md:h-20 w-full placeholder-transparent focus:outline-hidden bg-transparent relative top-3 resize-none"
                   placeholder="Leave me a message"
                 />
                 <label

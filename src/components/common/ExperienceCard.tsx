@@ -17,7 +17,7 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
         {arrowPosition === 'left' && (
           <div className="w-full h-px bg-gray-300 lg:mt-24 hidden lg:block" />
         )}
-        <div className="w-full lg:w-[420px] xl:w-[550px] 5xl:w-[800px] min-h-[237px] bg-white border border-gray-300 rounded-2xl p-4 5xl:p-6 flex-shrink-0">
+        <div className="w-full lg:w-[420px] xl:w-[550px] 5xl:w-[800px] min-h-[237px] bg-white border border-gray-300 rounded-2xl p-4 5xl:p-6 shrink-0">
           <div className="flex justify-between flex-wrap lg:flex-nowrap">
             <div className="flex-initial w-full md:w-auto">
               <p className="text-base md:text-lg 5xl:text-2xl font-medium leading-5 md:leading-10 5xl:leading-none tracking-75 5xl:tracking-normal">
@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience, arrowPosition, className }: Props) => {
           <div className="py-4">
             {experience.duties.map((duty, index) => (
               <div className="flex space-x-2 mb-3" key={index.toFixed()}>
-                <div className="w-[9px] h-[9px] 5xl:w-4 5xl:h-4 bg-gray-300 self-start rounded-full flex-shrink-0 mt-1 5xl:mt-2" />
+                <div className="w-[9px] h-[9px] 5xl:w-4 5xl:h-4 bg-gray-300 self-start rounded-full shrink-0 mt-1 5xl:mt-2" />
                 <p className="text-xs lg:text-sm 2xl:text-sm 5xl:text-2xl 5xl:tracking-normal tracking-75 2xl:tracking-wide">
                   {duty}
                 </p>

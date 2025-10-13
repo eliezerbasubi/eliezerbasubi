@@ -69,8 +69,8 @@ const Menu = ({ children, className, items = MENU_ITEMS }: IProps) => {
         onKeyDown={() => null}
         onClick={onToggleDrawer}
         className={cn(
-          'fixed inset-0 z-40 flex justify-end ease-in-out duration-700 transform outline-none translate-x-full',
-          { 'translate-x-0 backdrop-blur-sm bg-black/50': open }
+          'fixed inset-0 z-40 flex justify-end ease-in-out duration-700 transform outline-hidden translate-x-full',
+          { 'translate-x-0 backdrop-blur-xs bg-black/50': open }
         )}
       >
         <div

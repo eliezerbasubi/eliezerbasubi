@@ -22,7 +22,7 @@ const Experience = ({ experiences }: Props) => {
         />
 
         <div className="my-12 relative 5xl:px-56">
-          <div className="h-full w-[1px] bg-gray-300 absolute left-2/4 bottom-0 top-0" />
+          <div className="h-full w-px bg-gray-300 absolute left-2/4 bottom-0 top-0" />
           {experiences.map((experience, index) => (
             <ExperienceCard
               experience={experience}

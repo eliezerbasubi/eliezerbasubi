@@ -17,7 +17,7 @@ const ArticleCard = ({ article, className, isFeatured }: Props) => {
   return (
     <div className={cn('w-full h-full relative group', className)}>
       <Link href={`/blog/${article.slug}`}>
-        <div className="h-full border rounded-lg overflow-hidden relative z-[3]">
+        <div className="h-full border rounded-lg overflow-hidden relative z-3">
           <div
             className={cn('w-full h-52 lg:h-64', {
               'h-0 lg:h-0 relative overflow-hidden pb-[100%]': !isFeatured,
@@ -88,8 +88,8 @@ const ArticleCard = ({ article, className, isFeatured }: Props) => {
             </div>
           </div>
         </div>
-        <div className="absolute -bottom-1 inset-x-2 z-[2] border-b rounded-lg h-10" />
-        <div className="absolute -bottom-2 inset-x-4 z-[1] border-b rounded-lg h-10" />
+        <div className="absolute -bottom-1 inset-x-2 z-2 border-b rounded-lg h-10" />
+        <div className="absolute -bottom-2 inset-x-4 z-1 border-b rounded-lg h-10" />
       </Link>
     </div>
   );

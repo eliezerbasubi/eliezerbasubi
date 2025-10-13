@@ -32,7 +32,7 @@ const Hero = ({ about }: Props) => {
             </p>
           </div>
 
-          <div className="my-8 md:m-24 5xl:m-56 xl:mt-36 2xl:mt-40 md:w-[27rem] lg:w-[30rem] 5xl:w-[40rem]">
+          <div className="my-8 md:m-24 5xl:m-56 xl:mt-36 2xl:mt-40 md:w-108 lg:w-120 5xl:w-160">
             <p className="text-md lg:text-xl 2xl:text-2xl 5xl:text-4xl tracking-75">
               {about.personalDescription}
             </p>
@@ -46,8 +46,8 @@ const Hero = ({ about }: Props) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center md:block md:absolute md:-right-20 lg:right-auto lg:left-[42rem] ml:left-[940px] xl:left-[54rem] 3xl:left-[66rem] 4xl:left-[79rem] 5xl:left-[103rem] md:top-[12.5rem] lg:top-[14rem] ml:top-[316px] xl:top-[18rem] 3xl:top-[22rem] 4xl:top-[26rem] 5xl:top-[34rem]">
-          <div className="w-36 md:w-[250px] lg:w-[250px] xl:w-[339px] 3xl:w-[375px] 4xl:w-[450px] 5xl:w-[580px] h-36 md:h-[250px] lg:h-[250px] xl:h-[334px] 3xl:h-[375px] 4xl:h-[450px] 5xl:h-[580px] rounded-full border-[10px] border-black overflow-hidden bg-white">
+        <div className="flex flex-col justify-center items-center md:block md:absolute md:-right-20 lg:right-auto lg:left-168 ml:left-[940px] xl:left-216 3xl:left-264 4xl:left-316 5xl:left-412 md:top-50 lg:top-56 ml:top-[316px] xl:top-72 3xl:top-88 4xl:top-104 5xl:top-136">
+          <div className="w-36 md:w-[250px] lg:w-[250px] xl:w-[339px] 3xl:w-[375px] 4xl:w-[450px] 5xl:w-[580px] h-36 md:h-[250px] lg:h-[250px] xl:h-[334px] 3xl:h-[375px] 4xl:h-[450px] 5xl:h-[580px] rounded-full border-10 border-black overflow-hidden bg-white">
             <Image
               src={
                 about?.avatarUrl
@@ -70,7 +70,7 @@ const Hero = ({ about }: Props) => {
           >
             SCROLL
           </p>
-          <div className="h-full w-[1px] bg-white absolute left-2" />
+          <div className="h-full w-px bg-white absolute left-2" />
         </div>
       </div>
       <Background className="w-full hidden md:block" />

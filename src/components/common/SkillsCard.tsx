@@ -23,7 +23,7 @@ const SkillsCard = ({ title, description, skills }: Props) => {
       <div className="ml-8 md:ml-10 xl:ml-12 my-3">
         {skills.map((skill) => (
           <div key={skill._id} className="flex space-x-3 mb-2 5xl:mb-3">
-            <div className="w-[42px] h-[9px] bg-[#2E2D2D] flex-shrink-0 mt-1 5xl:mt-2" />
+            <div className="w-[42px] h-[9px] bg-[#2E2D2D] shrink-0 mt-1 5xl:mt-2" />
             <div className="text-sm md:text-sm 2xl:text-xl 5xl:text-3xl tracking-75 leading-5">
               <PortableText
                 value={skill.title as never}
