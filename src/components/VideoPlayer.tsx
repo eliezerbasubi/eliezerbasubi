@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/helpers';
+import { cn } from '@/lib/utils';
 import React, { useRef, useState } from 'react';
 import { HiPlay, HiPause } from 'react-icons/hi2';
 
@@ -30,7 +30,7 @@ const VideoPlayer = ({ source, className, ...props }: Props) => {
       <video
         ref={ref}
         src={source}
-        className={cn('absolute inset-0 w-full h-full bg-white', className)}
+        className={cn('absolute inset-0 size-full', className)}
         onEnded={() => setPlaying(false)}
         onPause={() => setPlaying(false)}
         onPlay={() => setPlaying(true)}

@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 import { GET_METATAGS } from '@/lib/queries';
 import { IMetaTag } from '@/lib/types';
-import { sanityClient, urlFor } from '@/lib/helpers/sanity';
+import { sanityClient, urlFor } from '@/lib/utils/sanity';
 
 import './globals.css';
 
@@ -81,9 +81,11 @@ const RootLayout = ({ children }: Props) => {
     <html>
       <body
         suppressHydrationWarning
-        className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} font-sans`}
+        className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} bg-black font-sans antialiased`}
       >
-        {children}
+        <div className="w-full max-w-[700px] mx-auto px-6 py-12 sm:py-32 md:py-16">
+          {children}
+        </div>
       </body>
     </html>
   );
