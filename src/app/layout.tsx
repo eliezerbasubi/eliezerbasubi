@@ -1,6 +1,7 @@
 import React from 'react';
 import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 
 import { GET_METATAGS } from '@/lib/queries';
 import { IMetaTag } from '@/lib/types';
@@ -78,12 +79,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html>
+    <html lang="en">
       <body
         suppressHydrationWarning
         className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} font-sans`}
       >
         {children}
+
+        <Analytics />
       </body>
     </html>
   );
