@@ -25,7 +25,7 @@ const Home = async () => {
         {data.experience.map((experience) => (
           <div
             key={experience._id}
-            className="w-full flex justify-between border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
@@ -61,7 +61,7 @@ const Home = async () => {
             target="_blank"
             rel="noopener noreferrer"
             href={project.projectUrl}
-            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-all ease-in py-4 px-0 hover:px-1 md:hover:px-2 hover:bg-white/10"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
@@ -83,7 +83,7 @@ const Home = async () => {
           <Link
             key={article._id}
             href={`/blog/${article.slug}`}
-            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-all ease-in py-4 px-0 hover:px-1 md:hover:px-2 hover:bg-white/10"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
