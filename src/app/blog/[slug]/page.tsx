@@ -84,7 +84,7 @@ const PostArticle = async ({ params }: Props) => {
   const article = await getArticle(slug);
 
   return (
-    <div className="w-full text-white px-2 md:px-0">
+    <div className="w-full max-w-[700px] mx-auto px-8 py-12 sm:py-32 md:py-16 text-white">
       <Link
         href="/"
         className="flex items-center font-medium mb-4 text-sm md:text-base gap-x-2"

@@ -83,9 +83,7 @@ const RootLayout = ({ children }: Props) => {
         suppressHydrationWarning
         className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} bg-black font-sans antialiased`}
       >
-        <div className="w-full max-w-[700px] mx-auto px-6 py-12 sm:py-32 md:py-16">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

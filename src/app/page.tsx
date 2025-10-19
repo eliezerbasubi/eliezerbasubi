@@ -13,7 +13,7 @@ const Home = async () => {
   const data = await sanityClient.fetch<IUser>(GENERIC_QUERY);
 
   return (
-    <main className="w-full">
+    <main className="w-full max-w-[700px] mx-auto px-6 py-12 sm:py-32 md:py-16">
       <header className="w-full mb-12 md:mb-24">
         <h1 className="text-white font-semibold">{data.about.fullName}</h1>
         <p className="text-foreground font-medium">{data.about.jobTitle}</p>
@@ -99,7 +99,13 @@ const Home = async () => {
       </section>
 
       <section className="w-full">
-        <h2 className="text-white text-sm font-extrabold mb-8">Interactions</h2>
+        <Link
+          href="/interactions"
+          className="group flex items-center gap-x-2 mb-8 text-white hover:text-white/90"
+        >
+          <h2 className="text-sm font-extrabold">Interactions</h2>
+          <HiArrowUpRight className="size-4 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out" />
+        </Link>
 
         <div className="w-full md:gap-x-8 gap-y-8 grid md:grid-cols-2">
           {data.interactions.map((interaction) => (
