@@ -27,7 +27,7 @@ const InteractionCard = ({
           {...(isFeatured ? { autoPlay: true, loop: true } : {})}
         />
       </div>
-      <h2 className="text-sm text-white/60 font-bold mt-4 line-clamp-1">
+      <h2 className="text-sm text-neutral-300 font-bold mt-4 line-clamp-1">
         {data.title}
       </h2>
     </div>

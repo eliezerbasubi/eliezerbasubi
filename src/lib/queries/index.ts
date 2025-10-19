@@ -43,7 +43,7 @@ export const GENERIC_QUERY = `
         listed,
         "author": author -> name
     },
-  "interactions": *[_type == "interaction"] {
+  "interactions": *[_type == "interaction"] | order(_createdAt desc) {
     _id,
     _ref,
     title,
