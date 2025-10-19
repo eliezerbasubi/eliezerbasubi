@@ -56,11 +56,6 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: '/icon-512x512.png',
       apple: '/icon-192x192',
-      other: {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        color: '#5bbad5',
-      },
     },
     appleWebApp: {
       capable: true,
