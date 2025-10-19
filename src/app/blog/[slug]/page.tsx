@@ -7,6 +7,7 @@ import { IArticle, IMetaTag } from '@/lib/types';
 import { sanityClient, urlFor } from '@/lib/utils/sanity';
 import components from '@/lib/serializers/article';
 import { GET_ARTICLE, GET_METATAGS } from '@/lib/queries';
+import { HiArrowUpLeft } from 'react-icons/hi2';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -83,15 +84,19 @@ const PostArticle = async ({ params }: Props) => {
   const article = await getArticle(slug);
 
   return (
-    <div className="w-full text-white/60">
-      <Link href="/" className="font-semibold mb-4">
-        {article.author}
+    <div className="w-full text-white px-2 md:px-0">
+      <Link
+        href="/"
+        className="flex items-center font-medium mb-4 text-sm md:text-base gap-x-2"
+      >
+        <HiArrowUpLeft className="size-3 md:size-4 stroke-2 text-white/50 -ml-5 md:-ml-5.5" />
+        <span className="text-white/60">{article.author}</span>
       </Link>
       <h2 className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold lg:leading-10 my-6">
         {article.title}
       </h2>
 
-      <div className="py-4 leading-7">
+      <div className="py-4 text-sm md:text-base leading-6 md:leading-7">
         <PortableText value={article.body as never} components={components} />
       </div>
     </div>

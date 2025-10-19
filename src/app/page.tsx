@@ -14,9 +14,9 @@ const Home = async () => {
 
   return (
     <main className="w-full">
-      <header className="w-full mb-32">
+      <header className="w-full mb-12 md:mb-24">
         <h1 className="text-white font-semibold">{data.about.fullName}</h1>
-        <p className="text-white/60">{data.about.jobTitle}</p>
+        <p className="text-foreground font-medium">{data.about.jobTitle}</p>
 
         <Socials className="mt-3" items={data.about.socials} />
       </header>
@@ -25,17 +25,17 @@ const Home = async () => {
         {data.experience.map((experience) => (
           <div
             key={experience._id}
-            className="w-full flex justify-between border-b-[0.5px] border-neutral-500 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
                 {experience.company}
               </h2>
-              <p className="text-white/60 text-sm font-medium md:font-normal">
+              <p className="text-foreground text-sm font-medium mt-1">
                 {experience.position}
               </p>
             </div>
-            <p className="text-xs font-medium text-white/60">
+            <p className="text-xs font-medium text-foreground">
               {formatDate(experience.startDate, {
                 month: 'short',
                 year: 'numeric',
@@ -53,7 +53,7 @@ const Home = async () => {
       </section>
 
       <section className="w-full mb-12">
-        <h2 className="text-white text-sm font-bold mb-4">Projects</h2>
+        <h2 className="text-white text-sm font-extrabold mb-4">Projects</h2>
 
         {data.projects.map((project) => (
           <Link
@@ -61,53 +61,53 @@ const Home = async () => {
             target="_blank"
             rel="noopener noreferrer"
             href={project.projectUrl}
-            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-500 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
                 {project.title}
               </h2>
-              <h3 className="line-clamp-1 text-white/60 text-sm">
+              <h3 className="line-clamp-1 text-foreground text-sm font-medium mt-1">
                 {project.description}
               </h3>
             </div>
-            <HiArrowUpRight className="text-white/60 size-4" />
+            <HiArrowUpRight className="text-foreground size-4" />
           </Link>
         ))}
       </section>
 
       <section className="w-full mb-12">
-        <h2 className="text-white text-sm font-bold mb-4">Writing</h2>
+        <h2 className="text-white text-sm font-extrabold mb-4">Writing</h2>
 
         {data.articles.map((article) => (
           <Link
             key={article._id}
             href={`/blog/${article.slug}`}
-            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-500 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
+            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4 px-0 hover:px-4 md:hover:px-6 hover:bg-white/10"
           >
             <div className="flex-1">
               <h2 className="text-white text-sm font-medium">
                 {article.title}
               </h2>
-              <h3 className="line-clamp-1 text-white/60 text-sm">
+              <h3 className="line-clamp-1 text-foreground text-sm font-medium mt-1">
                 {article.description}
               </h3>
             </div>
-            <HiArrowUpRight className="text-white/60 size-4" />
+            <HiArrowUpRight className="text-foreground size-4" />
           </Link>
         ))}
       </section>
 
       <section className="w-full">
-        <h2 className="text-white text-sm font-bold mb-8">Interactions</h2>
+        <h2 className="text-white text-sm font-extrabold mb-8">Interactions</h2>
 
-        <div className="w-full space-y-4">
+        <div className="w-full md:gap-x-8 gap-y-8 grid md:grid-cols-2">
           {data.interactions.map((interaction) => (
             <InteractionCard
               data={interaction}
               key={interaction._id}
               isFeatured
-              // videoStyle={{ clipPath: interaction.clipPath }}
+              videoStyle={{ clipPath: interaction.clipPath }}
             />
           ))}
         </div>

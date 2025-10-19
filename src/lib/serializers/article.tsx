@@ -117,7 +117,7 @@ const components: PortableTextComponents = {
     ),
 
     em: ({ children }) => (
-      <em className="text-gray-500 font-semibold">{children}</em>
+      <em className="text-gray-400 font-semibold">{children}</em>
     ),
     code: ({ children }) => (
       <span

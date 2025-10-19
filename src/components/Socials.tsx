@@ -69,7 +69,7 @@ const Socials = async ({ className, items, excludes = [] }: Props) => {
           rel="noopener noreferrer"
           key={key}
           title={key}
-          className="[&>svg]:size-3 flex items-center justify-center rounded-full text-gray-500 hover:text-white hover:border-black/5"
+          className="[&>svg]:size-3 flex items-center justify-center rounded-full text-foreground hover:text-white hover:border-black/5"
         >
           {icon}
         </a>
