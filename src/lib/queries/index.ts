@@ -8,7 +8,7 @@ export const GENERIC_QUERY = `
       personalDescription,
       socials,
   },
-  "experience": *[_type == "experience"] | order(active desc, endDate desc) {
+  "experience": *[_type == "experience" && listed == true] | order(active desc, startDate desc) {
       _id,
       active,
       company,
@@ -16,8 +16,9 @@ export const GENERIC_QUERY = `
       endDate,
       startDate,
       position,
+      listed,
   },
-  "projects": *[_type == "project"] {
+  "projects": *[_type == "project" && listed == true] | order(_createdAt desc) {
     _id,
     _ref,
     title,

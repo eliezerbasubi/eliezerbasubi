@@ -39,6 +39,13 @@ export default {
       initialValue: false,
     },
     {
+      name: 'listed',
+      description: 'Only listed positions will be visible to users',
+      title: 'Should this position be listed?',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       name: 'duties',
       title: 'Responsibilities',
       type: 'array',
@@ -47,6 +54,7 @@ export default {
           type: 'string',
         },
       ],
+      initialValue: [],
     },
   ],
 };

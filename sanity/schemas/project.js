@@ -62,10 +62,9 @@ export default {
       initialValue: false,
     },
     {
-      name: 'active',
-      description:
-        'Non-active projects will not be displayed in projects section',
-      title: 'Deactivate the project',
+      name: 'listed',
+      description: 'Only listed projects will be visible to users',
+      title: 'Should this project be listed',
       type: 'boolean',
       initialValue: true,
     },
