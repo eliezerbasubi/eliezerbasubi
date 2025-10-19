@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { GET_METATAGS } from '@/lib/queries';
 import { IMetaTag } from '@/lib/types';
-import { sanityClient, urlFor } from '@/lib/helpers/sanity';
+import { sanityClient, urlFor } from '@/lib/utils/sanity';
 
 import './globals.css';
 
@@ -57,11 +57,6 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: '/icon-512x512.png',
       apple: '/icon-192x192',
-      other: {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        color: '#5bbad5',
-      },
     },
     appleWebApp: {
       capable: true,
@@ -82,7 +77,7 @@ const RootLayout = ({ children }: Props) => {
     <html lang="en">
       <body
         suppressHydrationWarning
-        className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} font-sans`}
+        className={`${ibmPlexMono.variable} ${ibmPlexMono.className} ${ibmPlexSans.variable} ${ibmPlexSans.className} bg-black font-sans antialiased`}
       >
         {children}
 

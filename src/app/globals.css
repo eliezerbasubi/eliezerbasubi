@@ -1,12 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-  .drawer-open {
-    @apply h-screen overflow-y-hidden;
+@theme {
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-mono);
+
+  --breakpoint-sl: 1366px;
+  --breakpoint-ml: 1440px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 1920px;
+  --breakpoint-5xl: 2560px;
+
+  --tracking-75: 0.0075em;
+
+  --color-dark: #2e2d2d;
+  --color-foreground: #666;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
+
+@utility drawer-open {
+  @apply h-screen overflow-y-hidden;
+}
+
 .code-block,
 .code-block > pre {
   white-space: break-spaces;

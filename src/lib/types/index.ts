@@ -83,7 +83,9 @@ export interface IUser {
   about: IAbout;
   experience: IExperience[];
   skills: ISkills[];
-  works: IWork[];
+  projects: IProject[];
+  articles: IArticle[];
+  interactions: Interaction[];
 }
 
 export interface IContactForm {

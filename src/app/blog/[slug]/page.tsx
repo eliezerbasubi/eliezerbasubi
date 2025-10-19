@@ -1,13 +1,13 @@
 import { PortableText } from '@portabletext/react';
 import { Metadata } from 'next';
 import React, { cache } from 'react';
-import { MdTimer } from 'react-icons/md';
+import Link from 'next/link';
 
-import { formatDate } from '@/lib/helpers';
 import { IArticle, IMetaTag } from '@/lib/types';
-import { sanityClient, urlFor } from '@/lib/helpers/sanity';
+import { sanityClient, urlFor } from '@/lib/utils/sanity';
 import components from '@/lib/serializers/article';
 import { GET_ARTICLE, GET_METATAGS } from '@/lib/queries';
+import { HiArrowUpLeft } from 'react-icons/hi2';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -84,28 +84,20 @@ const PostArticle = async ({ params }: Props) => {
   const article = await getArticle(slug);
 
   return (
-    <div className="w-full md:max-w-xl lg:max-w-3xl mx-auto">
-      <div className="min-h-screen py-12">
-        <div className="w-full flex justify-between items-center flex-wrap lg:flex-nowrap">
-          <h1 className="text-gray-500 text-sm w-full lg:w-auto">
-            {formatDate(article.publishedOn as string, {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </h1>
-          <div className="flex items-center text-gray-500 space-x-1 w-full lg:w-auto">
-            <MdTimer />
-            <p className="text-sm">{article.readCount} min read</p>
-          </div>
-        </div>
-        <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold lg:leading-10 my-6">
-          {article.title}
-        </h2>
+    <div className="w-full max-w-[700px] mx-auto px-8 py-12 sm:py-32 md:py-16 text-white">
+      <Link
+        href="/"
+        className="flex items-center font-medium mb-4 text-sm md:text-base gap-x-2"
+      >
+        <HiArrowUpLeft className="size-3 md:size-4 stroke-2 text-white/50 -ml-5 md:-ml-5.5" />
+        <span className="text-white/60">{article.author}</span>
+      </Link>
+      <h2 className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold lg:leading-10 my-6">
+        {article.title}
+      </h2>
 
-        <div className="py-4 leading-7 text-[#171717]">
-          <PortableText value={article.body as never} components={components} />
-        </div>
+      <div className="py-4 text-sm md:text-base leading-6 md:leading-7">
+        <PortableText value={article.body as never} components={components} />
       </div>
     </div>
   );

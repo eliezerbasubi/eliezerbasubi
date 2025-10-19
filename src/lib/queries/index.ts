@@ -8,7 +8,7 @@ export const GENERIC_QUERY = `
       personalDescription,
       socials,
   },
-  "experience": *[_type == "experience"] | order(active desc, endDate desc) {
+  "experience": *[_type == "experience" && listed == true] | order(active desc, startDate desc) {
       _id,
       active,
       company,
@@ -16,18 +16,48 @@ export const GENERIC_QUERY = `
       endDate,
       startDate,
       position,
+      listed,
   },
-  "skills": *[_type == "skills"]{
-      _id,
-      title,
-      key,
-      description,
-      "skills": *[_type == "skill" && skill._ref == ^._id] | order(priority asc) {
-          title,
-         _id
-       }
-    }
-  }
+  "projects": *[_type == "project" && listed == true] | order(_createdAt desc) {
+    _id,
+    _ref,
+    title,
+    description,
+    "slug": slug.current,
+    thumbnail,
+    projectUrl,
+    tags,
+  },
+  "articles": *[_type == "article" && listed == true] | order(publishedOn desc) {
+        _id,
+        _ref,
+        title,
+        description,
+        "slug": slug.current,
+        thumbnail,
+        projectUrl,
+        tags,
+        featured,
+        readCount,
+        publishedOn,
+        listed,
+        "author": author -> name
+    },
+  "interactions": *[_type == "interaction"] {
+    _id,
+    _ref,
+    title,
+    description,
+    "slug": slug.current,
+    clipPath,
+    featured,
+    "thumbnail": thumbnail.asset->{
+      url,
+      originalFilename,
+      mimeType
+    },
+  },
+}
   `;
 
 export const GET_FEATURED_WORKS = `

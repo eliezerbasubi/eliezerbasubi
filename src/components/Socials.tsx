@@ -8,34 +8,45 @@ import {
 import { MdAlternateEmail } from 'react-icons/md';
 
 import { IAbout, TSocial, TSupportedSocials } from '@/lib/types';
-import { cn } from '@/lib/helpers';
+import { sanityClient } from '@/lib/utils/sanity';
+import { cn } from '@/lib/utils';
 
 type Props = {
   className?: string;
-  socials: IAbout['socials'];
+  items?: Record<TSupportedSocials, string>;
   excludes?: TSupportedSocials[];
 };
 
+const SOCIAL_QUERY = `
+    *[_type == "about"][0] {
+      socials
+    }`;
+
 const SOCIAL_ICONS: TSocial = {
   email: {
-    icon: <MdAlternateEmail className="5xl:h-10 5xl:w-10" />,
+    icon: <MdAlternateEmail />,
   },
   linkedin: {
-    icon: <FaLinkedinIn className="5xl:h-10 5xl:w-10" />,
+    icon: <FaLinkedinIn />,
   },
   twitter: {
-    icon: <FaTwitter className="5xl:h-10 5xl:w-10" />,
+    icon: <FaTwitter />,
   },
   github: {
-    icon: <FaGithub className="5xl:h-10 5xl:w-10" />,
+    icon: <FaGithub />,
   },
   telegram: {
-    icon: <FaTelegramPlane className="5xl:h-10 5xl:w-10" />,
+    icon: <FaTelegramPlane />,
   },
 };
 
-const SocialsList = ({ socials, excludes = [], className }: Props) => {
-  const socialUrls = Object.entries(socials).reduce<Partial<TSocial>>(
+const Socials = async ({ className, items, excludes = [] }: Props) => {
+  const result =
+    items ??
+    (await sanityClient.fetch<{ socials: IAbout['socials'] }>(SOCIAL_QUERY))
+      .socials;
+
+  const socialUrls = Object.entries(result).reduce<Partial<TSocial>>(
     (acc, [key, url]) => {
       const socialKey = key as TSupportedSocials;
       if (socialKey in SOCIAL_ICONS && !excludes.includes(socialKey)) {
@@ -50,9 +61,7 @@ const SocialsList = ({ socials, excludes = [], className }: Props) => {
   );
 
   return (
-    <div
-      className={cn('flex justify-center items-center space-x-3', className)}
-    >
+    <div className={cn('flex items-center space-x-2', className)}>
       {Object.entries(socialUrls).map(([key, { icon, url }]) => (
         <a
           href={key === 'email' ? `mailto:${url}` : url}
@@ -60,7 +69,7 @@ const SocialsList = ({ socials, excludes = [], className }: Props) => {
           rel="noopener noreferrer"
           key={key}
           title={key}
-          className="w-10 h-10 5xl:w-20 5xl:h-20 flex items-center justify-center bg-white border border-gray-300 rounded-full shadow-lg text-gray-500 hover:text-black hover:border-black/5"
+          className="[&>svg]:size-3 flex items-center justify-center rounded-full text-foreground hover:text-white hover:border-black/5"
         >
           {icon}
         </a>
@@ -69,4 +78,4 @@ const SocialsList = ({ socials, excludes = [], className }: Props) => {
   );
 };
 
-export default SocialsList;
+export default Socials;

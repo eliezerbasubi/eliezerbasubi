@@ -6,8 +6,8 @@ import { getImageDimensions } from '@sanity/asset-utils';
 import { codeToHtml } from 'shiki';
 import Image from 'next/image';
 
-import { urlFor } from '@/lib/helpers/sanity';
-import CopyButton from '@/components/common/CopyButton';
+import { urlFor } from '@/lib/utils/sanity';
+import CopyButton from '@/components/CopyButton';
 
 const ImageComponent = ({
   value,
@@ -117,12 +117,12 @@ const components: PortableTextComponents = {
     ),
 
     em: ({ children }) => (
-      <em className="text-gray-600 font-semibold">{children}</em>
+      <em className="text-gray-400 font-semibold">{children}</em>
     ),
     code: ({ children }) => (
       <span
-        className="font-mono"
-        style={{ backgroundColor: 'rgb(240, 240, 240)', padding: '0 0.5rem' }}
+        className="font-mono rounded-sm text-sm"
+        style={{ backgroundColor: 'rgb(30, 30, 30)', padding: '0 0.5rem' }}
       >
         {children}
       </span>
