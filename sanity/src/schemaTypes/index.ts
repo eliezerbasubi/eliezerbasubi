@@ -1,6 +1,4 @@
-import createSchema from 'part:@sanity/base/schema-creator';
-import schemaTypes from 'all:part:@sanity/base/schema-type';
-
+// Aggregate schema types for Sanity v4 Studio (TypeScript with defineType)
 import about from './about';
 import experience from './experience';
 import skills from './skills';
@@ -13,19 +11,16 @@ import contact from './contact';
 import metatags from './metatags';
 import interaction from './interaction';
 
-export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat([
-    about,
-    experience,
-    skills,
-    skill,
-    works,
-    article,
-    project,
-    author,
-    contact,
-    metatags,
-    interaction,
-  ]),
-});
+export const schemaTypes = [
+  about,
+  experience,
+  skills,
+  skill,
+  works,
+  article,
+  project,
+  author,
+  contact,
+  metatags,
+  interaction,
+];

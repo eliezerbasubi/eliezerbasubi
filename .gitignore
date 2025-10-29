@@ -40,5 +40,6 @@ yarn-error.log*
 sanity/sanity.json
 node_modules
 sanity/dist
+.sanity
 yarn.lock
 .env*
