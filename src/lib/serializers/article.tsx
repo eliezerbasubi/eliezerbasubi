@@ -121,7 +121,7 @@ const components: PortableTextComponents = {
     ),
     code: ({ children }) => (
       <span
-        className="font-mono rounded-sm text-sm"
+        className="font-mono rounded-sm text-sm text-white/60"
         style={{ backgroundColor: 'rgb(30, 30, 30)', padding: '0 0.5rem' }}
       >
         {children}
