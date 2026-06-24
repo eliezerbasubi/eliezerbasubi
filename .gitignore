@@ -43,3 +43,5 @@ sanity/dist
 .sanity
 yarn.lock
 .env*
+
+next-env.d.ts
