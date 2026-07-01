@@ -90,7 +90,7 @@ const PostArticle = async ({ params }: Props) => {
         className="flex items-center font-medium mb-4 text-sm md:text-base gap-x-2"
       >
         <HiArrowUpLeft className="size-3 md:size-4 stroke-2 text-white/50 -ml-5 md:-ml-5.5" />
-        <span className="text-white/60">{article.author}</span>
+        <span className="text-white/60">Sam Henry</span>
       </Link>
       <h2 className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold lg:leading-10 my-6">
         {article.title}

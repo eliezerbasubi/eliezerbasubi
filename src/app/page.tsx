@@ -6,7 +6,7 @@ import { sanityClient } from '@/lib/utils/sanity';
 import { GENERIC_QUERY } from '@/lib/queries';
 import { IUser } from '@/lib/types';
 import { formatDate } from '@/lib/utils';
-import Socials from '@/components/Socials';
+// import Socials from '@/components/Socials';
 import InteractionCard from '@/components/InteractionCard';
 
 const Home = async () => {
@@ -15,10 +15,10 @@ const Home = async () => {
   return (
     <main className="w-full max-w-[700px] mx-auto px-6 py-12 sm:py-32 md:py-16">
       <header className="w-full mb-12 md:mb-24">
-        <h1 className="text-white font-semibold">{data.about.fullName}</h1>
+        <h1 className="text-white font-semibold">Sam Henry</h1>
         <p className="text-foreground font-medium">{data.about.jobTitle}</p>
 
-        <Socials className="mt-3" items={data.about.socials} />
+        {/* <Socials className="mt-3" items={data.about.socials} /> */}
       </header>
 
       <section className="w-full mb-12">
@@ -55,25 +55,27 @@ const Home = async () => {
       <section className="w-full mb-12">
         <h2 className="text-white text-sm font-extrabold mb-4">Projects</h2>
 
-        {data.projects.map((project) => (
-          <Link
-            key={project._id}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={project.projectUrl}
-            className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-all ease-in py-4 px-0 hover:px-1 md:hover:px-2 hover:bg-white/10"
-          >
-            <div className="flex-1">
-              <h2 className="text-white text-sm font-medium">
-                {project.title}
-              </h2>
-              <h3 className="line-clamp-1 text-foreground text-sm font-medium mt-1">
-                {project.description}
-              </h3>
-            </div>
-            <HiArrowUpRight className="text-foreground size-4" />
-          </Link>
-        ))}
+        {data.projects
+          .filter((project) => project.title !== 'OnDuka')
+          .map((project) => (
+            <Link
+              key={project._id}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.projectUrl}
+              className="w-full flex justify-between cursor-pointer border-b-[0.5px] border-neutral-700 transition-all ease-in py-4 px-0 hover:px-1 md:hover:px-2 hover:bg-white/10"
+            >
+              <div className="flex-1">
+                <h2 className="text-white text-sm font-medium">
+                  {project.title}
+                </h2>
+                <h3 className="line-clamp-1 text-foreground text-sm font-medium mt-1">
+                  {project.description}
+                </h3>
+              </div>
+              <HiArrowUpRight className="text-foreground size-4" />
+            </Link>
+          ))}
       </section>
 
       <section className="w-full mb-12">
@@ -119,14 +121,14 @@ const Home = async () => {
         </div>
       </section>
 
-      <footer className="w-full flex items-center justify-between mt-16">
+      {/* <footer className="w-full flex items-center justify-between mt-16">
         <p className="text-white text-sm font-semibold">
           <span>&copy; {new Date().getFullYear()}</span>
           <span className="ml-2">{data.about.fullName}</span>
         </p>
 
         <Socials items={data.about.socials} className="[&>a>svg]:size-4" />
-      </footer>
+      </footer> */}
     </main>
   );
 };
