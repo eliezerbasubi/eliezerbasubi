@@ -22,34 +22,66 @@ const Home = async () => {
       </header>
 
       <section className="w-full mb-12">
-        {data.experience.map((experience) => (
-          <div
-            key={experience._id}
-            className="w-full flex justify-between border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4"
-          >
-            <div className="flex-1">
-              <h2 className="text-white text-sm font-medium">
-                {experience.company}
-              </h2>
-              <p className="text-foreground text-sm font-medium mt-1">
-                {experience.position}
-              </p>
-            </div>
-            <p className="text-xs font-medium text-foreground">
-              {formatDate(experience.startDate, {
-                month: 'short',
-                year: 'numeric',
-              })}{' '}
-              -{' '}
-              {experience.active
-                ? 'Present'
-                : formatDate(experience.endDate, {
+        {data.experience
+          .sort((a, b) => {
+            // Let's put independent contractor first, then sort by date
+            if (a.company === 'Independent Contractor') return -1;
+            if (b.company === 'Independent Contractor') return 1;
+            return 1;
+          })
+          .map((experience) => (
+            <div
+              key={experience._id}
+              className="w-full border-b-[0.5px] border-neutral-700 transition-[padding] ease-in py-4"
+            >
+              <div className="w-full flex justify-between">
+                <div className="flex-1">
+                  <h2 className="text-white text-sm font-medium">
+                    {experience.company}
+                  </h2>
+                  <p className="text-foreground text-sm font-medium mt-1">
+                    {experience.position}
+                  </p>
+                </div>
+                <p className="text-xs font-medium text-foreground">
+                  {formatDate(experience.startDate, {
                     month: 'short',
                     year: 'numeric',
-                  })}
-            </p>
-          </div>
-        ))}
+                  })}{' '}
+                  -{' '}
+                  {experience.active
+                    ? 'Present'
+                    : formatDate(experience.endDate, {
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                </p>
+              </div>
+
+              {experience.company === 'Independent Contractor' && (
+                <div className="flex gap-2 flex-wrap mt-2">
+                  <p className="text-xs font-medium text-foreground">
+                    Products:
+                  </p>
+                  {[
+                    'Prediction Markets',
+                    'HFT platforms',
+                    'GameFi',
+                    'NFT Marketplace',
+                    'Payments',
+                  ].map((item) => (
+                    <p
+                      key={item}
+                      className="group flex items-center gap-x-2 text-xs font-medium text-foreground"
+                    >
+                      {item}
+                      <span className="group-last:hidden">-</span>
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
       </section>
 
       <section className="w-full mb-12">
