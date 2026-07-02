@@ -33,12 +33,12 @@ export async function generateMetadata(): Promise<Metadata> {
     default: metadata.title,
   };
 
-  const baseUrl = metadata.siteURL ?? 'https://eliezerbasubi.com';
+  const baseUrl = metadata.siteURL ?? 'https://samh.vercel.app';
   const description = metadata.description;
 
   return {
     metadataBase: new URL(baseUrl),
-    title,
+    title: 'Sam Henry - Frontend Developer',
     description,
     keywords: metadata.keyWords,
     openGraph: {

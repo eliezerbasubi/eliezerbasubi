@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = article.title;
   const description = article.description;
-  const baseUrl = metadata.siteURL ?? 'https://eliezerbasubi.com';
+  const baseUrl = metadata.siteURL ?? 'https://samh.vercel.app';
   const articleUrl = new URL(`/${slug}`, baseUrl).toString();
 
   return {
